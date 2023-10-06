@@ -11,9 +11,9 @@ tags:
 
 ## Introduction
 
-## Prérequis
+## Pré-requis
 
--   Installer Python via un gestionnaire de paquets (je vous déconseille d'utiliser l'installeur officiel)
+-   Installer Python via un gestionnaire de paquets (je vous déconseille d'utiliser l'installateur officiel)
     -   Sous Windows via [scoop](https://scoop.sh/#/) ou le [windows store](https://apps.microsoft.com/store/search?publisher=Python%20Software%20Foundation).
     -   Sous macOS via [homebrew](https://brew.sh/), ou [tea](https://tea.xyz/).
     -   Sous Linux via [homebrew](https://brew.sh/) ou le gestionnaire de paquets de votre OS.

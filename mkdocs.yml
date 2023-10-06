@@ -11,6 +11,8 @@ extra:
 
 nav:
   - Introduction: index.md
+  - Tour du langage: python-tour.md
+  - Exercices: python-exercices.md
 
 plugins:
   - search
@@ -42,6 +44,7 @@ theme:
       accent: green
 
 markdown_extensions:
+  - abbr
   - admonition
   - pymdownx.details
   - pymdownx.superfences
@@ -55,5 +58,5 @@ markdown_extensions:
   - pymdownx.highlight:
       anchor_linenums: true
   - pymdownx.snippets:
-      base_path:
-        ["material/poo", "material/functional", "material/generalities"]
+      auto_append:
+        - "includes/abbreviations.md"
