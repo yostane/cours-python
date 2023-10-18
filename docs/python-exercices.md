@@ -18,3 +18,4 @@
 
 - [Exercices corrigés d'algorithmique Python - Les bases](https://www.tresfacile.net/tp-python-exercices-corriges-dalgorithmique-python-les-bases/)
 - [Exercices developpez](https://algo.developpez.com/exercices/)
+- [Sorting Algorithms Animations](https://www.toptal.com/developers/sorting-algorithms)
