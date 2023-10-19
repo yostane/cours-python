@@ -54,3 +54,6 @@ for key, value in pokemon1.items():
 
 for message in messages:
     print(message)
+
+for i in range(10, 21, 3):
+    print(i)
