@@ -11,11 +11,68 @@
 1. Ecrire un script Python qui demande à l’utilisateur de saisir un nombre entier et affiche tous les diviseurs de ce nombre.
 1. Ecrire un script Python qui génère deux nombres aléatoires x et y avec 0 <= x < 10 et x <= y < 100. (astuce: importer `random` et appeler `x = random.randint(0, 10)`).
 1. Ecrire un programme Python qui génère deux nombres aléatoires x et y avec 0 <= x < 10 et x <= y < 100. Le programme affiche ensuite le résultat de la division entière entre y et x et le reste de la division. (penser à gérer le cas où x = 0).
+1. Ecrire un programme qui affiche autant de caractères que possible d'une chaîne de caractères  sous forme de suite pyramidale. (astuce: on peut faire un for in sur une chaîne de caractères `for char in chaine`).
+    - Exemple pour la chaîne "abcdefghijklmnopqrstuvwxyz" * 10
+
+    ```
+    a 
+    bc 
+    def 
+    ghij 
+    klmno 
+    pqrstu 
+    vwxyzab 
+    cdefghij 
+    klmnopqrs 
+    tuvwxyzabc 
+    defghijklmn 
+    opqrstuvwxyz 
+    abcdefghijklm 
+    nopqrstuvwxyza 
+    bcdefghijklmnop 
+    qrstuvwxyzabcdef 
+    ghijklmnopqrstuvw 
+    xyzabcdefghijklmno 
+    pqrstuvwxyzabcdefgh 
+    ijklmnopqrstuvwxyzab 
+    cdefghijklmnopqrstuvw 
+    xyzabcdefghijklmnopqrs
+    ```
+
+    - Réponse incorrecte pour la "abcdefghijklmnopqrstuvwxyz"
+
+    ```
+    Incorrect
+    a 
+    bc 
+    def 
+    ghij 
+    klmno 
+    pqrstu 
+    vwxyz
+
+    Correct
+    a 
+    bc 
+    def 
+    ghij 
+    klmno 
+    pqrstu 
+    ```
+
+1. Écrire une fonction `count_letters(texte)` ayant pour argument une chaîne de caractères texte et qui renvoie un dictionnaire qui contient la fréquence de toutes les lettres de la chaîne entrée. Par exemple: `count_letters("hello")` renvoie `{"h": 1, "e": 1, "l": 2, "o": 1}`.
+1. Soit des rectangles définis avec des dictionnaires dont les clés sont `"x", "y", "largeur", "hauteur"`.
+    - Ecrire une fonction `is_intersecting(rectangle1, rectangle2)` qui retourne `True` s'il y a intersection entre les deux rectangles.
+    - Ecrire une fonction `get_intersection(rectangle1, rectangle2)` qui retourne le rectangle intersection s'il existe, sinon `None`.
+1. Ecrire une fonction `fx_square(x)` qui retourne le résultat de `x * x`.
+    - Ecrire une fonction `fx_square_list(x, n)` qui retourne une liste dont chaque élément est le résultat `fx_square(i)`, `i` étant l'indice de l'élément dans la liste.
+    - Utiliser la librairie `matplotlib` pour dessiner un graphique dont les abscisses sont les entier allant de 0 à n et les ordonnées sont les éléments retournés par `fx_square_list(x, n)`.
 
 ## Corrigés
 
 ## Source
 
 - [Exercices corrigés d'algorithmique Python - Les bases](https://www.tresfacile.net/tp-python-exercices-corriges-dalgorithmique-python-les-bases/)
-- [Exercices developpez](https://algo.developpez.com/exercices/)
+- [Exercices du site développez](https://algo.developpez.com/exercices/)
 - [Sorting Algorithms Animations](https://www.toptal.com/developers/sorting-algorithms)
+- [Sites pour apprendre en s’amusant](https://info.blaisepascal.fr/exercices-python/)
