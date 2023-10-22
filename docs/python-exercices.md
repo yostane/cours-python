@@ -72,7 +72,7 @@
 
 ## Série 2
 
-Résoudre les exercices suivants avec les compréhensions
+Résoudre les exercices suivants avec les compréhensions.
 
 1. Créer une liste des 10 premiers nombres pairs
 1. Créer un dictionnaire contentant 10 clé allant de 0 à 9. La valeur de chaque clé est une texte indiquant la parité du nombre. (exemple: {0: "paire", 1: "impaire", etc.})
