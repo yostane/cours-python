@@ -19,24 +19,6 @@ def add(x, y):
 
 print(add(-810, b))
 
-# List
-numbers = [3, 4, -3, "hello", True, 390]
-print(numbers)
-print(numbers[0], numbers[-1], numbers[-2])
-
-print(numbers[0:3], numbers[:3], numbers[1:5])
-print(numbers[-3:-1])
-
-# Dictionnary
-pokemon1 = {"name": "Pikachu", "hp": 10, "type": "Thunder"}
-print(pokemon1, pokemon1["name"], pokemon1["type"])
-
-# Set
-messages = {"hello", "world", 2023}
-print(messages, "hello" in messages, 2024 in messages)
-messages.add(2023)
-print(messages)
-
 r = range(10)
 print(r)
 
@@ -45,15 +27,6 @@ for item in r:
 
 for item in range(10):
     print(item)
-
-for number in numbers:
-    print(number)
-
-for key, value in pokemon1.items():
-    print(key, value)
-
-for message in messages:
-    print(message)
 
 for i in range(10, 21, 3):
     print(i)

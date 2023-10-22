@@ -24,8 +24,11 @@ tour.py
 - Python est dynamiquement typé: une variable peut changer de type durant son utilisation (contraire de statiquement typé)
 - Python est fortement typé: chaque donnée a un type et ne change pas de façon implicite
 - Python supporte la programmation orienté objet et fonctionnelle
+- Les indentations sont utilisées pour définir les blocs de code (au lieu des `{}` accolades qu'on trouve usuellement dans d'autres langages)
+    - La taille de l'indentation doit être consistance au sein du même block
+    - Il est recommandé d'avoir une indentation de 4 espaces
 - Il existe plusieurs conventions de programmation mais qui on beaucoup de points communs. La convention officielle est appelée [pep 8](https://peps.python.org/pep-0008/). Voici quelques règles et recommandations:
-    - snake case pour les fonctions. Ex. `find_student()`
+    - Snake case pour les fonctions. Ex. `find_student()`
     - Utiliser des espaces pour définir l'indentation et éviter d'utiliser la touche **tab**
 
 ## Types et opérations de base
@@ -34,14 +37,26 @@ tour.py
 - Chaines de caractères (String)
 - Valeurs booléennes et opérateurs booléens `and`, `or` et `not`
 - Opérateurs de comparaison `>`, `<`, ... qui retournent un booléen
-    - `is` permet de tester l'identité entre deux objects. Son résultat peut être personnalisé.
+    - `is` permet de tester l'identité entre deux objets. Son résultat peut être personnalisé.
     - `==` est parfois équivalent à `is`
 - Comme python est fortement type, convertir un valeur vers un autre type devra se faire explicitement `int()`, `float()`, `complex()`, `str()`, ...
+
+## Collections standards
+
+- Collection: type (ou structure) de données qui permet de gérer un ensemble de données
+- Python propose plusieurs types intégrés de collections
+- Voici les 4 types les plus usuels: *list*, *dict*, *set* et *tuple*
+
+```py
+--8<--
+collections_base.py
+--8<--
+```
 
 ## Programmation fonctionnelle
 
 - Les fonctions sont des éléments de première classe : Les fonctions sont comme des variables
-- Utilisation intensive de fonctions pures: fonction sans effet de bord, toujours le même résultat pour les mêmes entrées
+- Utilisation intensive de fonctions pures : fonction sans effet de bord, toujours le même résultat pour les mêmes entrées
     - exemples de fonctions par pure: print (car elle change la console)
 - Immutabilité
     - On ne peut pas changer la valeur d'une variable une fois initialisée
