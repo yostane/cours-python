@@ -13,6 +13,10 @@ nav:
   - Introduction: index.md
   - Tour du langage: python-tour.md
   - Exercices: python-exercices.md
+  - POO: python-poo.md
+  - Exercices POO: python-exercices.md
+  - Porgrammtion fonctionnelle: python-func.md
+  - Exercices Prog fonctionnelle: python-exercices.md
 
 plugins:
   - search
@@ -58,6 +62,6 @@ markdown_extensions:
   - pymdownx.highlight:
       anchor_linenums: true
   - pymdownx.snippets:
-      base_path: ["includes", "material/tour"]
+      base_path: ["includes", "material/tour", "material/poo"]
       auto_append:
         - "includes/abbreviations.md"

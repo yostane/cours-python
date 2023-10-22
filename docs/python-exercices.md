@@ -4,7 +4,7 @@
 
     - Ne pas de faire aider par des IA ou genAI
 
-## Enoncés
+## Série 1
 
 1. Ecrire un script Python qui demande à l’utilisateur de saisir un nombre entier et affiche si ce nombre est pair ou impair. (astuce: utiliser `n = int(input("Saisir un entier : "))`)
 1. Ecrire un script Python qui demande à l'utilisateur de saisir un entier n et affiche la somme des n premiers entiers.
@@ -68,7 +68,16 @@
     - Ecrire une fonction `fx_square_list(x, n)` qui retourne une liste dont chaque élément est le résultat `fx_square(i)`, `i` étant l'indice de l'élément dans la liste.
     - Utiliser la librairie `matplotlib` pour dessiner un graphique dont les abscisses sont les entier allant de 0 à n et les ordonnées sont les éléments retournés par `fx_square_list(x, n)`.
 
-## Corrigés
+## Corrigés série 1
+
+## Série 2
+
+Résoudre les exercices suivants avec les compréhensions
+
+1. Créer une liste des 10 premiers nombres pairs
+1. Créer un dictionnaire contentant 10 clé allant de 0 à 9. La valeur de chaque clé est une texte indiquant la parité du nombre. (exemple: {0: "paire", 1: "impaire", etc.})
+1. Créer un dictionnaire contentant 10 clé allant de 0 à 9 convertie en string. La valeur de chaque clé est une texte indiquant la parité du nombre. (exemple: {"0": "paire", "1": "impaire", etc.})
+1. Créer un dictionnaire qui filtre le dictionnaire précédent en ne gardant que les nombres impairs
 
 ## Source
 

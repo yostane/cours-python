@@ -53,21 +53,17 @@ collections_base.py
 --8<--
 ```
 
-## Programmation fonctionnelle
+## La compréhension des listes, dictionnaires et ensembles
 
-- Les fonctions sont des éléments de première classe : Les fonctions sont comme des variables
-- Utilisation intensive de fonctions pures : fonction sans effet de bord, toujours le même résultat pour les mêmes entrées
-    - exemples de fonctions par pure: print (car elle change la console)
-- Immutabilité
-    - On ne peut pas changer la valeur d'une variable une fois initialisée
-    - On ne peut pas changer les propriétés d'un object une fois instancié
-    - On ne peut pas ajouter ou supprimer des éléments d'une collection
-- On le code est développé sous forme d'une chaîne de traitements (comme dans une usine)
+- Permet de créer une nouvelle liste, dictionnaire ou ensemble à partir d'une collection existante
+- Permet de remplacer certains traitements qu'on aurait dû faire avec les boucles
+- Pour une liste `[f(index) for index in input_seq if condition]` (`input_seq` est une liste, tuple ou toute séquence itérable avec indice)
+- Pour une liste `[f(item) for item in input_seq if condition]` (`input_seq` est une liste, tuple ou toute séquence itérable)
+- Pour un dictionnaire `{f_key(item):f_value(item) for item in input_seq if condition}` (`input_seq` est une séquence itérable)
+- `f, f_key, f_value` sont des fonctions quelconques
+- La partie `if condition` est optionnelle
+- Il est aussi possible de remplacer les boucles imbriquées par une seule compréhension
 
-## Relation entre la POO et la programmation fonctionnelle
+## Sources et référecnces
 
-- La POO est la prog. fonctionnelle ne sont pas mutuellement exclusifs
-- On peut développer en POO avec un style fonctionnelle:
-    - Les méthodes ne font pas de mutation de champs de l'objet
-    - Les propriétés sont uniquement en read-only
-    - Les `records` simplifient la création de ce genre de classes
+- [Python List Comprehension: single, multiple, nested, & more](https://www.learndatasci.com/solutions/python-list-comprehension/)
