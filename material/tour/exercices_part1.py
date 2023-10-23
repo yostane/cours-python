@@ -53,3 +53,18 @@ def count_letters3(input):
 print(count_letters1("hello"))
 print(count_letters2("hello"))
 print(count_letters3("hello"))
+
+
+def is_intersect_1D(x1, l1, x2, l2):
+    # Dans d'autres langages, il aurait fallu écrire (On ne peut pas combiner les inégalités)
+    # x1 < x2 && x2 < x1 + l1 || x2 < x1 && x1 < x2 + l2
+    return x1 < x2 < x1 + l1 or x2 < x1 < x2 + l2
+
+
+print(is_intersect_1D(0, 10, 3, 1))
+print(is_intersect_1D(2, 5, 10, 4))
+print(is_intersect_1D(-2, 5, 10, 4))
+print(is_intersect_1D(0, 10, -10, 20))
+print(is_intersect_1D(100, 1, -5, 1000))
+print(is_intersect_1D(100, 1, -5, 106))
+print(is_intersect_1D(100, 1, -5, 99))
