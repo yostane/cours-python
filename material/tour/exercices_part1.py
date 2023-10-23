@@ -68,3 +68,17 @@ print(is_intersect_1D(0, 10, -10, 20))
 print(is_intersect_1D(100, 1, -5, 1000))
 print(is_intersect_1D(100, 1, -5, 106))
 print(is_intersect_1D(100, 1, -5, 99))
+
+
+def is_intersect_2D(rec1, rec2):
+    pass
+
+
+rec1 = {"x": 10, "y": 30, "width": 100, "height": 200}
+rec2 = {"x": -5, "y": 20, "width": 50, "height": 100}
+rec3 = {"x": -5, "y": 20, "width": 50, "height": 100}
+rec4 = {"x": -5, "y": 20, "width": 50, "height": 100}
+print(is_intersect_2D(rec1, rec2))
+print(is_intersect_2D(rec1, rec3))
+print(is_intersect_2D(rec1, rec4))
+print(is_intersect_2D(rec2, rec3))
