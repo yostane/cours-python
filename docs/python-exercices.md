@@ -70,11 +70,13 @@
 
 ## Corrigés série 1
 
-```py
---8<--
-exercices_part1.py
---8<--
-```
+??? Cliquer pour montrer
+
+    ```py
+    --8<--
+    exercices_part1.py
+    --8<--
+    ```
 
 ## Série 2
 
