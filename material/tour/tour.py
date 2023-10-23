@@ -30,3 +30,8 @@ for item in range(10):
 
 for i in range(10, 21, 3):
     print(i)
+
+
+message = "I ♥️ Python"
+for letter in message:
+    print(letter)

@@ -70,6 +70,12 @@
 
 ## Corrigés série 1
 
+```py
+--8<--
+exercices_part1.py
+--8<--
+```
+
 ## Série 2
 
 Résoudre les exercices suivants avec les compréhensions.
