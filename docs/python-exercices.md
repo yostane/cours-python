@@ -67,6 +67,8 @@
 1. Ecrire une fonction `fx_square(x)` qui retourne le résultat de `x * x`.
     - Ecrire une fonction `fx_square_list(n)` qui retourne une liste de n éléments. La valeur d'un élément d'indice `i` est `fx_square(i)`.
     - Utiliser la librairie `matplotlib` pour dessiner un graphique dont les abscisses sont les entiers allant de 0 à n et les ordonnées sont les éléments retournés par `fx_square_list(n)`.
+1. Définir une fonction `fx_square_list2(points)` qui prend en argument une liste d'entiers ordonnées par ordre croissant et retourne une nouvelle liste dont la valeur du i ème élément est `points[i] * points[i]`.
+    - Tracer le graphique de **f(x) = x * x** pour x compris entre -100 à 100.
 
 ## Corrigés série 1
 
