@@ -69,7 +69,7 @@ collections_base.py
 - Même si la libraire standard de Python est riche, on a souvent besoin d'utiliser des librairies tierces pour aller plus vite
 - Le dépôt standard des librairies Python est [PyPI](https://pypi.org/) (**Py**thon **P**ackage **I**ndex)
 - On peut utiliser son moteur de recherche pour trouver un librairie. Par exemple, cherchons la libraire **matplotlib**
-- Une fois dans la page de la librairie, on peut trouver la commande qui permet de l'installer localement. Pour **matplotlib**, la commande sera `pip install matplotlib`
+- Une fois dans la page de la librairie, on peut trouver la commande qui permet de l'installer localement. Pour **matplotlib**, la commande sera `pip install matplotlib` (si pip n'est pas trouvé alors essayer avec `python -m pip install matplotlib`)
 - Ensuite, on pourra utiliser la librairie en se référant à sa documentation. Par exemple, matplotlib propose [des tutoriels](https://matplotlib.org/stable/tutorials/index.html) qui est un bon point de départ.
 
 ## Sources et références
