@@ -64,6 +64,14 @@ collections_base.py
 - La partie `if condition` est optionnelle
 - Il est aussi possible de remplacer les boucles imbriquées par une seule compréhension
 
-## Sources et référecnces
+## Utiliser une librairie tierce
+
+- Même si la libraire standard de Python est riche, on a souvent besoin d'utiliser des librairies tierces pour aller plus vite
+- Le dépôt standard des librairies Python est [PyPI](https://pypi.org/) (**Py**thon **P**ackage **I**ndex)
+- On peut utiliser son moteur de recherche pour trouver un librairie. Par exemple, cherchons la libraire **matplotlib**
+- Une fois dans la page de la librairie, on peut trouver la commande qui permet de l'installer localement. Pour **matplotlib**, la commande sera `pip install matplotlib`
+- Ensuite, on pourra utiliser la librairie en se référant à sa documentation. Par exemple, matplotlib propose [des tutoriels](https://matplotlib.org/stable/tutorials/index.html) qui est un bon point de départ.
+
+## Sources et références
 
 - [Python List Comprehension: single, multiple, nested, & more](https://www.learndatasci.com/solutions/python-list-comprehension/)

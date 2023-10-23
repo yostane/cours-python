@@ -26,7 +26,7 @@ print_pyramide("abcdefghijklmnopqrstuvwxyz")
 print_pyramide("abcdefghijklmnopqrstuvwxyz" * 10)
 
 
-def count_letter(input):
+def count_letters1(input):
     dict = {}
     for letter in input:
         if letter in dict:
@@ -36,20 +36,20 @@ def count_letter(input):
     return dict
 
 
-def count_letter2(input):
+def count_letters2(input):
     dict = {}
     for letter in input:
         dict[letter] = dict.get(letter, 0) + 1
     return dict
 
 
-def count_letter3(input):
+def count_letters3(input):
     dict = {}
     for letter in input:
         dict[letter] = dict[letter] + 1 if letter in dict else 1
     return dict
 
 
-print(count_letter("hello"))
-print(count_letter2("hello"))
-print(count_letter3("hello"))
+print(count_letters1("hello"))
+print(count_letters2("hello"))
+print(count_letters3("hello"))
