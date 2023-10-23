@@ -65,16 +65,24 @@
     - Ecrire une fonction `is_intersecting(rectangle1, rectangle2)` qui retourne `True` s'il y a intersection entre les deux rectangles.
     - Ecrire une fonction `get_intersection(rectangle1, rectangle2)` qui retourne le rectangle intersection s'il existe, sinon `None`.
 1. Ecrire une fonction `fx_square(x)` qui retourne le résultat de `x * x`.
-    - Ecrire une fonction `fx_square_list(x, n)` qui retourne une liste dont chaque élément est le résultat `fx_square(i)`, `i` étant l'indice de l'élément dans la liste.
-    - Utiliser la librairie `matplotlib` pour dessiner un graphique dont les abscisses sont les entier allant de 0 à n et les ordonnées sont les éléments retournés par `fx_square_list(x, n)`.
+    - Ecrire une fonction `fx_square_list(n)` qui retourne une liste de n éléments. La valeur d'un élément d'indice `i` est `fx_square(i)`.
+    - Utiliser la librairie `matplotlib` pour dessiner un graphique dont les abscisses sont les entiers allant de 0 à n et les ordonnées sont les éléments retournés par `fx_square_list(n)`.
 
 ## Corrigés série 1
 
-??? Cliquer pour montrer
+??? "Exos pyramide, count_letters et intersection"
 
     ```py
     --8<--
     exercices_part1.py
+    --8<--
+    ```
+
+??? "plot"
+
+    ```py
+    --8<--
+    exercices_part1_plot.py
     --8<--
     ```
 
