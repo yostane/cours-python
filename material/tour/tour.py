@@ -9,6 +9,7 @@ print("a+b", c)
 
 if b == 10:
     print(b)
+    print(b)
 else:
     print("b différent de 10")
 
@@ -18,10 +19,15 @@ def add(x, y):
 
 
 print(add(-810, b))
+f = add
+print(f(-810, b))
 
+print("range demo: générateur")
 r = range(10)
 print(r)
+print("valeur de début", r.start, "pas", r.step)
 
+print("range loop")
 for item in r:
     print(item)
 

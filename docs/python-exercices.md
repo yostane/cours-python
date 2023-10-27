@@ -6,8 +6,8 @@
 
 ## Série 1
 
-1. Ecrire un script Python qui demande à l’utilisateur de saisir un nombre entier et affiche si ce nombre est pair ou impair. (astuce: utiliser `n = int(input("Saisir un entier : "))`)
-1. Ecrire un script Python qui demande à l'utilisateur de saisir un entier n et affiche la somme des n premiers entiers.
+1. Ecrire un script Python qui demande à l’utilisateur de saisir un nombre entier et affiche si ce nombre est pair ou impair. 💡 Astuce: utiliser `n = int(input("Saisir un entier : "))`
+1. Ecrire un script Python qui demande à l'utilisateur de saisir un entier n et affiche la somme des n premiers entiers (somme des entiers de 0 jusqu'à n).
 1. Ecrire un script Python qui demande à l’utilisateur de saisir un nombre entier et affiche tous les diviseurs de ce nombre.
 1. Ecrire un script Python qui génère deux nombres aléatoires x et y avec 0 <= x < 10 et x <= y < 100. (astuce: importer `random` et appeler `x = random.randint(0, 10)`).
 1. Ecrire un programme Python qui génère deux nombres aléatoires x et y avec 0 <= x < 10 et x <= y < 100. Le programme affiche ensuite le résultat de la division entière entre y et x et le reste de la division. (penser à gérer le cas où x = 0).
@@ -72,6 +72,14 @@
 1. Faire le graphique de -100 à 100 des fonctions suivantes: `exp(x)`, `1/x`, `log(x) + (1/(x puissance3))`
 
 ## Corrigés série 1
+
+??? "Exos de 1 à 5"
+
+    ```py
+    --8<--
+    exercices_part1_exos1_5.py
+    --8<--
+    ```
 
 ??? "Exos pyramide, count_letters et intersection"
 
