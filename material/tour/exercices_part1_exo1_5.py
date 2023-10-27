@@ -1,6 +1,7 @@
 n = int(input("Saisir un entier : "))
 
 print("pair" if n % 2 == 0 else "impair")
+print(("pair", "impair")[n % 2])
 
 somme_n = 0
 for i in range(n + 1):
