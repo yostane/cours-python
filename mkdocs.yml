@@ -17,6 +17,7 @@ nav:
   - Exercices POO: python-exercices.md
   - Porgrammtion fonctionnelle: python-func.md
   - Exercices Prog fonctionnelle: python-exercices.md
+  - Exemples de projets: projects-type.md
 
 plugins:
   - search
