@@ -77,7 +77,7 @@
 
     ```py
     --8<--
-    exercices_part1_exos1_5.py
+    exercices_part1_exo1_5.py
     --8<--
     ```
 
