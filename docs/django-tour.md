@@ -1,0 +1,132 @@
+# Django
+
+Django est un Framework de développement de applications web ou d'APIs REST.
+
+Dans ce qui suite, nous résumons le tutoriel de démarrage [proposé par Django](https://www.djangoproject.com/start/).
+
+## Création et démarrage d'un projet
+
+- Installer la dernière version de Django `pip install Django==[version]` ([cette page](https://www.djangoproject.com/download/) permet de trouver la dernière version)
+- Vérifier que l'installation a réussi: `python -m django --version`
+- Créer un **projet django**: `django-admin startproject [nom du projet]`
+- Démarrer le serveur de développement avec `python manage.py runserver` et ouvrir le lien affiché par la sortie de la commande.
+- Structure du projet
+
+```sh
+mysite/
+    manage.py # Script de gestion du projet (fichier à ne pas modifier)
+    mysite/ # Informations et paramètres du projet
+        __init__.py # Permet d'être considéré par Python comme un module
+        settings.py # Paramètres du projet
+        urls.py # Les routes que le projet gère
+        asgi.py # Point d'entée pour les serveurs de type ASGI
+        wsgi.py # Point d'entée pour les serveurs de type WSGI
+```
+
+## Ajout d'une application
+
+- Un projet Django contient plusieurs **applications**
+- Pour Django, une **application** est un paquet Python qui proposer un ensemble de fonctionnalités (pages Web, Interface d'administration, API REST, Middlewares, etc.)
+    - Les applications sont censées être autonomes et réutilisables dans différents projets.
+- Le projet que vous venons de créer utilise déjà quelques applications. Vous pouvez les vérifier dans `settings.py`
+- Ajouter une nouvelle application: `python manage.py startapp polls`. Consulter le contenu du dossier créé.
+- Nous allons ajouter une page. Pour ce faire, suivons ces étapes:
+    - Ajouter une page dans `views.py`
+
+    ```py
+    from django.http import HttpResponse
+
+
+    def index(request):
+        return HttpResponse("Hello, world. You're at the polls index.")
+    ```
+
+    - Associer une route à la page que nous venons de créer dans `urls.py` (`""` signifie que la page sera associée à la **racine de l'application**)
+
+    ```py
+    from django.urls import path
+
+    from . import views
+
+    urlpatterns = [
+        path("", views.index, name="index"),
+    ]
+    ```
+
+    - Comme nous n'avons pas encore défini la route de l'application au sein du projet, il faut le faire maintenant en mettant à jour le fichier `[nom du projet]/urls.py`
+
+    ```py
+    from django.contrib import admin
+    from django.urls import include, path
+
+    urlpatterns = [
+        # la route polls/ utiliser le fichier urls.py du dossier polls (d'où le polls.urls)
+        path("polls/", include("polls.urls")), 
+        path("admin/", admin.site.urls),
+    ]
+    ```
+
+- Ouvrir la page que nous venons de créer en utilisant l'url: `[url du servur de dev]/[chemon de l'app]`. Pour notre cas, ce sera: `http://localhost:8000/polls/`
+- _Exercice_: ajouter une page `http://localhost:8000/polls/hello` qui affiche 'Hello World' dans une balise `h1`
+
+## Bases de données
+
+- Django utilise un mécanisme de **migrations** qui permet de suivre les évolutions de la structure la BDD dans le temps
+    - Ce système est très pratique pour permettre des mises à niveau de la BDD de l'application de production sans avoir à appliquer à la main les changement faits durant le développement.
+    - C'est similaire à ce que fait Git (qui mémorise les changements faits sur un fichier) qui permet de reconstruire la dernière version d'un fichier en partant de sa version initiale et en appliquant tous les changement faits à travers les différents commits.
+- Sur Django, cela fonctionne en trois phases:
+    1. Définir ou mettre à jour les modèles (équivalent d'une table côté code Django)
+    1. Définir le point de migration à partir de l'état actuel des modèles: `python manage.py makemigrations polls`
+    1. Appliquer les migrations aux bases de données liées à l'application: `python manage.py migrate`
+- Django sait gérer les migrations des application enregistrées dans la liste `INSTALLED_APPS` du fichier `settings.py`.
+- Comme les applications pré-resneignées ont déjà défini leur modèles et points de migration, il ne reste qu'a les appliquer à la BDD du projet: `python manage.py migrate`
+- Vérifier le contenu de la BDD (par défaut c'est le fichier `db.sqlite3`)
+    - 💡 Il est possible de changer la BDD dans le fichier `settings.py`
+- Dans la suite, nous allons ajouter des tables dans l'application que nous avons créé précédemment en suivant donc les trois phases introduites plus haut:
+    1. Définir les modèles dans `[dossier de l'app]/models.py`
+
+        ```py
+        from django.db import models
+
+
+        class Question(models.Model):
+            question_text = models.CharField(max_length=200)
+            pub_date = models.DateTimeField("date published")
+
+
+        class Choice(models.Model):
+            question = models.ForeignKey(Question, on_delete=models.CASCADE)
+            choice_text = models.CharField(max_length=200)
+            votes = models.IntegerField(default=0)
+        ```
+
+    1. Dans settings.py, ajouter `"polls.apps.PollsConfig"` dans la liste `INSTALLTED_APPS`. Ceci nous permet d'utiliser les migrations. Définissons le points de migration: `python manage.py makemigrations polls`. Surveiller la sortie de la console.
+        - Pour vérifier qui sera généré si on exécute cette migration par la suite: `python manage.py sqlmigrate polls 0001`
+    1. Appliquer les migrations à la BDD: `python manage.py migrate`
+
+## Shell Django
+
+- Il est possible de tester les API de Django et agir sur notre projet depuis le terminal
+- Lancer la commande : `python manage.py shell` qui ouvre un invite interactif (affiche les résultat après chaque commande) Python lié à notre projet Django.
+- Exécuter les commandes suivantes une par une:
+
+```py
+from polls.models import Choice, Question
+
+# Devrait afficher <QuerySet []> car la table est vide
+Question.objects.all() 
+
+from django.utils import timezone
+q = Question(question_text="What's new?", pub_date=timezone.now())
+q.save() # enregistrer dans la BDD
+q.id # devrait afficher 1
+q.question_text
+q.pub_date
+q.question_text = "What's up?"
+q.save()
+Question.objects.all()
+# Devrait affichier <QuerySet [<Question: Question object (1)>]>
+# Noter le Question object (1) qui n'est pas très lisible
+```
+
+- Afin d'améliorer l'affichage des objets au sein de notre projet, définir la méthode `__str__(self):` dans chacune des classes modèles et réessayer d'appeler un `Question.objects.all()`.
