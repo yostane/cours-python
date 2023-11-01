@@ -130,3 +130,10 @@ Question.objects.all()
 ```
 
 - Afin d'améliorer l'affichage des objets au sein de notre projet, définir la méthode `__str__(self):` dans chacune des classes modèles et réessayer d'appeler un `Question.objects.all()`.
+
+## Ressources
+
+- [Différentes méthodes pour gérer les environnements](https://djangostars.com/blog/configuring-django-settings-best-practices/)
+- [Gestion des environnements avec `django-environ`](https://django-environ.readthedocs.io/)
+- [Using Django with Multiple Databases](https://dboostme.medium.com/using-django-with-multiple-databases-introduction-8f0ffb409995)
+- [Checklist de déploiement](https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/)
