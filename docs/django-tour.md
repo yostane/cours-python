@@ -127,6 +127,8 @@ q.save()
 Question.objects.all()
 # Devrait affichier <QuerySet [<Question: Question object (1)>]>
 # Noter le Question object (1) qui n'est pas très lisible
+q.choice_set.create(choice_text= "Choix 1", votes = 2)
+q.save()
 ```
 
 - Afin d'améliorer l'affichage des objets au sein de notre projet, définir la méthode `__str__(self):` dans chacune des classes modèles et réessayer d'appeler un `Question.objects.all()`.
