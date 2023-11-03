@@ -10,4 +10,6 @@ class Prompt(models.Model):
     reply = models.CharField(max_length=2000)
 
     def __str__(self) -> str:
-        return f"Prompt of {self.user.username}: {self.user.query}. The reply was: {self.user.reply}"
+        return (
+            f"Prompt of {self.user.username}: {self.query}. The reply was: {self.reply}"
+        )

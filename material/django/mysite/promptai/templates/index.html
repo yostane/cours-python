@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chat AI</title>
+  </head>
+  <body>
+    <a href="prompt-input">Enter your prompt</a>
+    <h1>Prompt list</h1>
+    <ul>
+      {% for prompt in prompts %}
+      <li>
+        {{ prompt.query }}: {{ prompt.reply }} from {{ prompt.user.username }}
+      </li>
+      {% endfor %}
+    </ul>
+  </body>
+</html>

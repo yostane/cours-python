@@ -38,6 +38,8 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "polls.apps.PollsConfig",
+    # Nom du dossier de l'app.nom du fichier app.py.nom de la classe qui est dedans
+    "promptai.apps.PromptaiConfig",
 ]
 
 MIDDLEWARE = [

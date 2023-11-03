@@ -3,4 +3,6 @@ from . import views
 
 urlpatterns = [
     path("", views.index, name="index"),
+    path("prompt-input", views.showQueryForm, name="prompt-input"),
+    path("run-query", views.processQueryForm, name="run-query"),
 ]
