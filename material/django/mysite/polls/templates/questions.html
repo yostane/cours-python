@@ -11,7 +11,12 @@
     <ul>
       {% for question in questions %}
       <li>
-        {{ prompt.query }}: {{ prompt.reply }} from {{ prompt.user.username }}
+        {{ question.question_text }}. Date: {{ question.pub_date }}
+        <ul>
+          {% for choice in question.choice_set() %}
+          <li></li>
+          {% endfor %}
+        </ul>
       </li>
       {% endfor %}
     </ul>
