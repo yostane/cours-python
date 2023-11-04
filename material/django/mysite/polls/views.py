@@ -20,5 +20,10 @@ def index(request):
     return HttpResponse(content)
 
 
+def showQuestionsWithTemplate(request):
+    context = {"questions": Question.objects.all()}
+    return render(request, "questions.html", context)
+
+
 def test(request):
     return HttpResponse("<h1 style='color:red'>Tu peux pas test<h1>")

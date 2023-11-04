@@ -124,14 +124,75 @@ q.question_text
 q.pub_date
 q.question_text = "What's up?"
 q.save()
-Question.objects.all()
 # Devrait affichier <QuerySet [<Question: Question object (1)>]>
 # Noter le Question object (1) qui n'est pas très lisible
+Question.objects.all()
 q.choice_set.create(choice_text= "Choix 1", votes = 2)
 q.save()
 ```
 
 - Afin d'améliorer l'affichage des objets au sein de notre projet, définir la méthode `__str__(self):` dans chacune des classes modèles et réessayer d'appeler un `Question.objects.all()`.
+
+## Affichage des données dans des pages web
+
+- Ce code permet d'afficher les questions et les choix sous forme de listes à puces.
+
+```py
+def index(request):
+    content = "<h1>Questions</h1>"
+    content += "<ul>"
+    for question in Question.objects.all():
+        content += "<li>"
+        content += f"{question.question_text} - {question.pub_date}. {question.choice_set.count()} choix"
+        content += "<ul>"
+        str_choices = [
+            f"<li>{c.choice_text} / {c.votes}</li>" for c in question.choice_set.all()
+        ]
+        content += "".join(str_choices)
+        content += "</ul>"
+        content += "</li>"
+    content += "</ul>"
+    return HttpResponse(content)
+```
+
+!!! note "Compréhension de listes"
+
+    Cette Syntaxe permet de générer une nouvelle liste à partir d'une liste existante.
+    
+    Par exemple `[x+1 for x in [1, 2, 3, 4]]` générera la liste `[1, 2, 3, 4, 5]`.
+    Sur le même principe, `[f"<li>{c.choice_text} / {c.votes}</li>" for c in question.choice_set.all()]` gérera une liste de chaines de caractères.
+
+## Utilisation d'un template
+
+- Jusqu'à présent, le HTML des vues est codé _"en dur"_ dans le code
+- La technique recommandée est de faire les traitement dans le code et déléguer l'affichage à un fichier HTML particulier qu'on appelle **"template"**
+    - Ce modèle est appelé modèle **MVC** (Model View Controller)
+- Les templates doivent être placés dans `[dossier de l'app]/templates`
+
+```py "à mettre dans views.py"
+from django.shortcuts import render
+
+def showQuestionsWithTemplate(request):
+    context = {"questions": Question.objects.all()}
+    return render(request, "questions.html", context)
+
+# ajouter path("questions", views.showQuestionsWithTemplate, name="questions"), dans urls.py
+```
+
+```html "à mettre dans templates/questions.html"
+
+```
+
+## L'application admin
+
+- L'application **admin** propose une interface web basique de type CRUD
+- Accessible depuis `[URL du serveur]/admin`. Elle propose une page de connexion
+    - Les utilisateurs sont gérés via l'application auth. On y reviendra plus tard.
+- Ajoutons un super utilisateur (comme un root dans Linux) `python manage.py createsuperuser`
+- Se connecter à l'interface d'admin avec le compte nouvellement créé et faire quelques manipulations
+- Les tables proposées par l'interface d'admin proviennent de l'application **auth** qui a enregistré la possibilité d'éditer ses tables depuis l'interface d'admin
+- Faisons pareil avec les tables de l'application que nous avons créé. Dans le fichier `[app]/admin.py` ajouter une ligne `admin.site.register([modèle(s)])`
+    - Pour notre cas ce sera: `admin.site.register([Question, Choice])`
 
 ## Ressources
 
