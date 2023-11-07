@@ -37,3 +37,6 @@ for message in messages:
 # Tuple : éléments ordonnées immutable (on ne peut ajouter ou supprimer d'éléments). On peut le considérer comme une liste immutable
 n1 = (12, 34, 55, 33)
 print(n1, n1[2:])
+
+for item in n1:
+    print(item)

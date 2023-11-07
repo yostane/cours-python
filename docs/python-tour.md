@@ -64,6 +64,12 @@ collections_base.py
 - La partie `if condition` est optionnelle
 - Il est aussi possible de remplacer les boucles imbriquées par une seule compréhension
 
+```py
+--8<--
+comprehension.py
+--8<--
+```
+
 ## Utiliser une librairie tierce
 
 - Même si la libraire standard de Python est riche, on a souvent besoin d'utiliser des librairies tierces pour aller plus vite
