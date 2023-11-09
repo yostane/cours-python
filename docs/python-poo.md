@@ -24,6 +24,12 @@ poo_1.py
 --8<--
 ```
 
+```py
+--8<--
+poo_2.py
+--8<--
+```
+
 ## Notions de statique et abstrait
 
 - Notion de Propriété, méthode ou classe statique:
