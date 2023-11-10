@@ -4,11 +4,11 @@ Django est un Framework de développement de applications web ou d'APIs REST.
 
 Dans ce qui suite, nous résumons le tutoriel de démarrage [proposé par Django](https://www.djangoproject.com/start/).
 
-## Exensions VSCode recommandée
+## Exensions VS Code recommandées
 
 Veuillez lire les instructions de configuration de chaque extension:
 
-- Foramatteur et linteur de templates: [monosans.djlint](https://marketplace.visualstudio.com/items?itemName=monosans.djlint)
+- Formatteur et linteur de templates: [monosans.djlint](https://marketplace.visualstudio.com/items?itemName=monosans.djlint)
 - Coloration syntaxique des templates: [batisteo.vscode-django](https://marketplace.visualstudio.com/items?itemName=batisteo.vscode-django)
 
 ## Création et démarrage d'un projet
@@ -200,6 +200,17 @@ def showQuestionsWithTemplate(request):
 - Les tables proposées par l'interface d'admin proviennent de l'application **auth** qui a enregistré la possibilité d'éditer ses tables depuis l'interface d'admin
 - Faisons pareil avec les tables de l'application que nous avons créé. Dans le fichier `[app]/admin.py` ajouter une ligne `admin.site.register([modèle(s)])`
     - Pour notre cas ce sera: `admin.site.register([Question, Choice])`
+
+## Utilisation d'une librairie de composants
+
+### Material UI
+
+ça semble compliqué à priori
+
+- Télécharger la librairie: Ajouter dans `requirements.txt`  et relancer un `pip install -r requirements.txt`
+- Activer la librairie: dans `settings.py` ajouter cette app juste avant nos propres apps `"theme_material_kit"`
+- Appliquer la migration comme on a ajouté une nouvelle app `pythom manage.py migrate`
+- Ajout des urls proposées par l'app en dernière priorité: Dans le `urls.py` global, ajouter `path("", include('theme_material_kit.urls'))`
 
 ## Ressources
 

@@ -6,4 +6,5 @@ urlpatterns = [
     path("prompt-input", views.showQueryForm, name="prompt-input"),
     path("run-query", views.processQueryForm, name="run-query"),
     path("ai-chat", views.showChatView, name="ai-chat"),
+    path("material-demo", views.showMaterialDemo, name="material-demo"),
 ]

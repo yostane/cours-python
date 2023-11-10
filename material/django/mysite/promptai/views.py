@@ -41,3 +41,9 @@ def processQueryForm(request):
     user.prompt_set.create(query=form.cleaned_data["query"], reply="réponse à la main")
     user.save()
     return HttpResponse(f"<h1>The query was: {form.cleaned_data['query']}</h1>")
+
+
+def showMaterialDemo(request: HttpRequest) -> HttpResponse:
+    user = User.objects.all()[1]
+    data = {"prompts": user.prompt_set.all()}
+    return render(request, "material-demo.html", data)
