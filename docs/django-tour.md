@@ -219,6 +219,9 @@ def showQuestionsWithTemplate(request):
 
 ## Formulaires d'enregistrement et de connexion
 
+- `django.contrib.auth.forms` propose des formulaires prédéfinis comme les: `AuthenticationForm et UserCreationForm`
+- [Les custom template tags](https://docs.djangoproject.com/en/4.2/howto/custom-template-tags/) permettent d'agir sur le rendu html. Cela peut être utile pour insérer des styles dans les formulaires avant d'en faire le rendu.
+
 - [tuto](https://ordinarycoders.com/blog/article/django-user-register-login-logout)
 - [Templates de formulaires](https://pypi.org/project/django-bulma-form-templates/)
 

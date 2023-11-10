@@ -5,8 +5,7 @@
 {% block content %}
   <form action="{% url 'ai-chat' %}" method="post">
     {% csrf_token %}
-    <label for="query">Your query:</label>
-    <input type="text" name="query" id="query" />
+    {{ prompt_form }}
     <input type="submit" value="OK" />
   </form>
   <ul>

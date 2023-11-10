@@ -1,22 +1,14 @@
 {% extends "base_bulma.html" %}
 {% load static %}
+{% load bulma_tags %}
 {% block title %}
     Démo Bulma
 {% endblock title %}
 {% block content %}
     <form action="{% url 'bulma-demo' %}" method="post">
         {% csrf_token %}
+        {{ prompt_form|bulma }}
         <div class="field">
-            <label for="query" class="label">Prompt</label>
-            <div class="control">
-                <input class="input"
-                       type="text"
-                       placeholder="Please enter your prompt"
-                       name="query"
-                       id="query">
-            </div>
-        </div>
-        <div class="field is-grouped">
             <div class="control">
                 <input type="submit" class="button is-link" value="OK" />
             </div>

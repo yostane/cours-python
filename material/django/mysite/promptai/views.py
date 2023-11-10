@@ -3,8 +3,8 @@ from django.http import HttpResponse, HttpRequest
 from django.template import loader
 from django.contrib.auth.models import User
 from django.contrib.auth import login, authenticate, logout
-from django.contrib.auth.forms import AuthenticationForm
-from .forms import PromptForm, UserCreationForm
+from django.contrib.auth.forms import AuthenticationForm, UserCreationForm
+from .forms import PromptForm
 from .models import Prompt
 
 
@@ -31,7 +31,7 @@ def show_chat_view(request: HttpRequest) -> HttpResponse:
             user.save()
     # Load the prompts of the current user and add it to the response
     user = User.objects.all()[1]
-    data = {"prompts": user.prompt_set.all()}
+    data = {"prompts": user.prompt_set.all(), "prompt_form": PromptForm()}
     return render(request, "ai-chat.html", data)
 
 
@@ -52,8 +52,17 @@ def show_material_demo(request: HttpRequest) -> HttpResponse:
 
 
 def show_bulma_demo(request: HttpRequest) -> HttpResponse:
+    if request.method == "POST":
+        form = PromptForm(request.POST)
+        if form.is_valid():
+            user = User.objects.all()[1]
+            user.prompt_set.create(
+                query=form.cleaned_data["query"], reply="réponse à la main"
+            )
+            user.save()
+    # Load the prompts of the current user and add it to the response
     user = User.objects.all()[1]
-    data = {"prompts": user.prompt_set.all()}
+    data = {"prompts": user.prompt_set.all(), "prompt_form": PromptForm()}
     return render(request, "bulma-demo.html", data)
 
 
@@ -61,7 +70,9 @@ def register_request(request: HttpRequest) -> HttpResponse:
     if request.method == "POST":
         form = UserCreationForm(request.POST)
         if form.is_valid():
+            # sauvegarde en bdd
             user = form.save()
+            # création du user dans la session HTTP
             login(request, user)
             return redirect("bulma-demo")
     form = UserCreationForm()
