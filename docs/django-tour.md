@@ -212,6 +212,16 @@ def showQuestionsWithTemplate(request):
 - Appliquer la migration comme on a ajouté une nouvelle app `pythom manage.py migrate`
 - Ajout des urls proposées par l'app en dernière priorité: Dans le `urls.py` global, ajouter `path("", include('theme_material_kit.urls'))`
 
+### Bulma
+
+- Suivre la [doc officielle](https://bulma.io/documentation/overview/start/)
+- Voir exemple d'intégration dans le projet d'exemple
+
+## Formulaires d'enregistrement et de connexion
+
+- [tuto](https://ordinarycoders.com/blog/article/django-user-register-login-logout)
+- [Templates de formulaires](https://pypi.org/project/django-bulma-form-templates/)
+
 ## Ressources
 
 - [Différentes méthodes pour gérer les environnements](https://djangostars.com/blog/configuring-django-settings-best-practices/)

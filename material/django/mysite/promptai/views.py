@@ -1,8 +1,10 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponse, HttpRequest
 from django.template import loader
 from django.contrib.auth.models import User
-from .forms import PromptForm
+from django.contrib.auth import login, authenticate, logout
+from django.contrib.auth.forms import AuthenticationForm
+from .forms import PromptForm, UserCreationForm
 from .models import Prompt
 
 
@@ -13,11 +15,11 @@ def index(request):
     return HttpResponse(template.render(context, request))
 
 
-def showQueryForm(request):
+def show_query_form(request):
     return render(request, "prompt-input.html")
 
 
-def showChatView(request: HttpRequest) -> HttpResponse:
+def show_chat_view(request: HttpRequest) -> HttpResponse:
     # Process the form
     if request.method == "POST":
         form = PromptForm(request.POST)
@@ -33,7 +35,7 @@ def showChatView(request: HttpRequest) -> HttpResponse:
     return render(request, "ai-chat.html", data)
 
 
-def processQueryForm(request):
+def process_query_form(request):
     form = PromptForm(request.POST)
     if not form.is_valid():
         return HttpResponse(f"<h1>Invalid</h1>")
@@ -43,13 +45,51 @@ def processQueryForm(request):
     return HttpResponse(f"<h1>The query was: {form.cleaned_data['query']}</h1>")
 
 
-def showMaterialDemo(request: HttpRequest) -> HttpResponse:
+def show_material_demo(request: HttpRequest) -> HttpResponse:
     user = User.objects.all()[1]
     data = {"prompts": user.prompt_set.all()}
     return render(request, "material-demo.html", data)
 
 
-def showBulmaDemo(request: HttpRequest) -> HttpResponse:
+def show_bulma_demo(request: HttpRequest) -> HttpResponse:
     user = User.objects.all()[1]
     data = {"prompts": user.prompt_set.all()}
     return render(request, "bulma-demo.html", data)
+
+
+def register_request(request: HttpRequest) -> HttpResponse:
+    if request.method == "POST":
+        form = UserCreationForm(request.POST)
+        if form.is_valid():
+            user = form.save()
+            login(request, user)
+            return redirect("bulma-demo")
+    form = UserCreationForm()
+    return render(
+        request,
+        "auth/register.html",
+        {"register_form": form},
+    )
+
+
+def login_request(request: HttpRequest) -> HttpResponse:
+    if request.method == "POST":
+        form = AuthenticationForm(request, request.POST)
+        if form.is_valid():
+            username = form.cleaned_data.get("username")
+            password = form.cleaned_data.get("password")
+            user = authenticate(username=username, password=password)
+            if user is not None:
+                login(request, user)
+                return redirect("bulma-demo")
+    form = AuthenticationForm()
+    return render(
+        request,
+        "auth/login.html",
+        {"login_form": form},
+    )
+
+
+def logout_request(request: HttpRequest) -> HttpResponse:
+    logout(request)
+    return redirect("bulma-demo")

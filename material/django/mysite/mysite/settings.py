@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     # Librairie de composants material
     "theme_material_kit",
+    "bulma",
     "polls.apps.PollsConfig",
     # Nom du dossier de l'app.nom du fichier app.py.nom de la classe qui est dedans
     "promptai.apps.PromptaiConfig",

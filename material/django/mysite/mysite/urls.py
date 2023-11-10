@@ -22,5 +22,5 @@ urlpatterns = [
     path("polls/", include("polls.urls")),
     path("admin/", admin.site.urls),
     # Utilisation des url proposées par material kit
-    path("", include("theme_material_kit.urls")),
+    # path("material/", include("theme_material_kit.urls")),
 ]
