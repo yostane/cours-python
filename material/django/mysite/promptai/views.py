@@ -67,6 +67,7 @@ def show_bulma_demo(request: HttpRequest) -> HttpResponse:
 
 
 def register_request(request: HttpRequest) -> HttpResponse:
+    form = None
     if request.method == "POST":
         form = UserCreationForm(request.POST)
         if form.is_valid():
@@ -75,7 +76,8 @@ def register_request(request: HttpRequest) -> HttpResponse:
             # création du user dans la session HTTP
             login(request, user)
             return redirect("bulma-demo")
-    form = UserCreationForm()
+    else:
+        form = UserCreationForm()
     return render(
         request,
         "auth/register.html",

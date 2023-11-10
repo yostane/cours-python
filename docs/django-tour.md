@@ -216,6 +216,7 @@ def showQuestionsWithTemplate(request):
 
 - Suivre la [doc officielle](https://bulma.io/documentation/overview/start/)
 - Voir exemple d'intégration dans le projet d'exemple
+- Ajouter les styles bulma dans les formulaires avec [django-bulma-form-templates](https://pypi.org/project/django-bulma-form-templates/)
 
 ## Formulaires d'enregistrement et de connexion
 

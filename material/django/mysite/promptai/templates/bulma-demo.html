@@ -5,7 +5,7 @@
     Démo Bulma
 {% endblock title %}
 {% block content %}
-    <form action="{% url 'bulma-demo' %}" method="post">
+    <form action="{% url 'bulma-demo' %}" method="post" class="box">
         {% csrf_token %}
         {{ prompt_form|bulma }}
         <div class="field">
@@ -14,7 +14,29 @@
             </div>
         </div>
     </form>
-    <ul>
-        {% for promt in prompts %}<li>Query: {{ promt.query }} - Reply: {{ promt.reply }}</li>{% endfor %}
-    </ul>
+    <div class="section">
+        <h1 class="title">Historique</h1>
+        <div class="columns is-multiline">
+            {% for prompt in prompts %}
+                <div class="column">
+                    <div class="card">
+                        <header class="card-header">
+                            <p class="card-header-title">{{ prompt.query }}</p>
+                        </header>
+                        <div class="card-content">
+                            <div class="content">
+                                {{ prompt.reply }}
+                                <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
+                            </div>
+                        </div>
+                        <footer class="card-footer">
+                            <a href="#" class="card-footer-item">Save</a>
+                            <a href="#" class="card-footer-item">Edit</a>
+                            <a href="#" class="card-footer-item">Delete</a>
+                        </footer>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
 {% endblock content %}

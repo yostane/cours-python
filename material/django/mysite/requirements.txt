@@ -1,4 +1,5 @@
 Django==4.2.7
-django-theme-material-kit==1.0.19
-# Css de bulma dans les formulaires
+## Material kit (à inclure si vous choisissez de l'utiliser)
+django-theme-material-kit==1.0.19 
+# Css de bulma dans les formulaires (si vous utilisez bulma)
 django-bulma
