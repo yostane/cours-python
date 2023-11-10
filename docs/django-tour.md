@@ -4,6 +4,13 @@ Django est un Framework de développement de applications web ou d'APIs REST.
 
 Dans ce qui suite, nous résumons le tutoriel de démarrage [proposé par Django](https://www.djangoproject.com/start/).
 
+## Exensions VSCode recommandée
+
+Veuillez lire les instructions de configuration de chaque extension:
+
+- Foramatteur et linteur de templates: [monosans.djlint](https://marketplace.visualstudio.com/items?itemName=monosans.djlint)
+- Coloration syntaxique des templates: [batisteo.vscode-django](https://marketplace.visualstudio.com/items?itemName=batisteo.vscode-django)
+
 ## Création et démarrage d'un projet
 
 - Installer la dernière version de Django `pip install Django==[version]` ([cette page](https://www.djangoproject.com/download/) permet de trouver la dernière version)

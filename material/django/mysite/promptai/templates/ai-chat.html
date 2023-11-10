@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block title %}
+  AI Chat
+{% endblock title %}
+{% block content %}
+  <form action="{% url 'ai-chat' %}" method="post">
+    {% csrf_token %}
+    <label for="query">Your query:</label>
+    <input type="text" name="query" id="query" />
+    <input type="submit" value="OK" />
+  </form>
+  <ul>
+    {% for promt in prompts %}<li>Query: {{ promt.query }} - Reply: {{ promt.reply }}</li>{% endfor %}
+  </ul>
+{% endblock content %}

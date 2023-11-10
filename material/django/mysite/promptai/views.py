@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpRequest
 from django.template import loader
 from django.contrib.auth.models import User
 from .forms import PromptForm
@@ -15,6 +15,22 @@ def index(request):
 
 def showQueryForm(request):
     return render(request, "prompt-input.html")
+
+
+def showChatView(request: HttpRequest) -> HttpResponse:
+    # Process the form
+    if request.method == "POST":
+        form = PromptForm(request.POST)
+        if form.is_valid():
+            user = User.objects.all()[1]
+            user.prompt_set.create(
+                query=form.cleaned_data["query"], reply="réponse à la main"
+            )
+            user.save()
+    # Load the prompts of the current user and add it to the response
+    user = User.objects.all()[1]
+    data = {"prompts": user.prompt_set.all()}
+    return render(request, "ai-chat.html", data)
 
 
 def processQueryForm(request):
