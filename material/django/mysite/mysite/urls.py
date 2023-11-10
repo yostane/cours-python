@@ -21,4 +21,6 @@ urlpatterns = [
     path("", include("promptai.urls")),
     path("polls/", include("polls.urls")),
     path("admin/", admin.site.urls),
+    # Utilisation des url proposées par material kit
+    path("", include("theme_material_kit.urls")),
 ]

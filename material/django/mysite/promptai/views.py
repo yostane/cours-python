@@ -47,3 +47,9 @@ def showMaterialDemo(request: HttpRequest) -> HttpResponse:
     user = User.objects.all()[1]
     data = {"prompts": user.prompt_set.all()}
     return render(request, "material-demo.html", data)
+
+
+def showBulmaDemo(request: HttpRequest) -> HttpResponse:
+    user = User.objects.all()[1]
+    data = {"prompts": user.prompt_set.all()}
+    return render(request, "bulma-demo.html", data)

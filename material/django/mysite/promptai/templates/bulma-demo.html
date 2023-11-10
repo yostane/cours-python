@@ -1,0 +1,28 @@
+{% extends "base_bulma.html" %}
+{% load static %}
+{% block title %}
+    Démo Bulma
+{% endblock title %}
+{% block content %}
+    <form action="{% url 'bulma-demo' %}" method="post">
+        {% csrf_token %}
+        <div class="field">
+            <label for="query" class="label">Prompt</label>
+            <div class="control">
+                <input class="input"
+                       type="text"
+                       placeholder="Please enter your prompt"
+                       name="query"
+                       id="query">
+            </div>
+        </div>
+        <div class="field is-grouped">
+            <div class="control">
+                <input type="submit" class="button is-link" value="OK" />
+            </div>
+        </div>
+    </form>
+    <ul>
+        {% for promt in prompts %}<li>Query: {{ promt.query }} - Reply: {{ promt.reply }}</li>{% endfor %}
+    </ul>
+{% endblock content %}
