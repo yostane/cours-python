@@ -60,6 +60,10 @@ def show_bulma_demo(request: HttpRequest) -> HttpResponse:
                 query=form.cleaned_data["query"], reply="réponse à la main"
             )
             user.save()
+    elif request.GET.get("load_id") != None:
+        pass
+    elif request.GET.get("del_id") != None:
+        pass
     # Load the prompts of the current user and add it to the response
     user = User.objects.all()[1]
     data = {"prompts": user.prompt_set.all(), "prompt_form": PromptForm()}
