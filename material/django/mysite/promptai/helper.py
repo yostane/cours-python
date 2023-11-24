@@ -9,7 +9,7 @@ model = None
 def init_model():
     global tokenizer
     global model
-    if tokenizer != None:
+    if model != None:
         return
     print("Chargement du modèle")
     tokenizer = AutoTokenizer.from_pretrained("microsoft/DialoGPT-large")
@@ -18,7 +18,8 @@ def init_model():
 
 
 def ask_model(query: str) -> str:
-    if tokenizer == None:
+    # pour répondre même si on ne charge pas le modèle
+    if model == None:
         return "Modèle désactivé"
     new_user_input_ids = tokenizer.encode(
         f"{query}{tokenizer.eos_token}", return_tensors="pt"
