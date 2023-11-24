@@ -2,11 +2,24 @@ from transformers import AutoModelForCausalLM, AutoTokenizer
 import torch
 
 step = 0
+tokenizer = None
+model = None
+
+
+def init_model():
+    global tokenizer
+    global model
+    if tokenizer != None:
+        return
+    print("Chargement du modèle")
+    tokenizer = AutoTokenizer.from_pretrained("microsoft/DialoGPT-large")
+    model = AutoModelForCausalLM.from_pretrained("microsoft/DialoGPT-large")
+    print("Modèle chargé")
 
 
 def ask_model(query: str) -> str:
-    tokenizer = AutoTokenizer.from_pretrained("microsoft/DialoGPT-large")
-    model = AutoModelForCausalLM.from_pretrained("microsoft/DialoGPT-large")
+    if tokenizer == None:
+        return "Modèle désactivé"
     new_user_input_ids = tokenizer.encode(
         f"{query}{tokenizer.eos_token}", return_tensors="pt"
     )

@@ -6,9 +6,8 @@ import torch
 
 
 tokenizer = AutoTokenizer.from_pretrained("microsoft/DialoGPT-large")
-model = AutoModelForCausalLM.from_pretrained("microsoft/DialoGPT-large")
-
 print(tokenizer.eos_token)
+model = AutoModelForCausalLM.from_pretrained("microsoft/DialoGPT-large")
 
 # Let's chat for 5 lines
 for step in range(5):

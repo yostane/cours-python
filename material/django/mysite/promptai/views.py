@@ -52,19 +52,18 @@ def show_material_demo(request: HttpRequest) -> HttpResponse:
 
 
 def show_bulma_demo(request: HttpRequest) -> HttpResponse:
+    user = User.objects.all()[1]
     if request.method == "POST":
         form = PromptForm(request.POST)
         if form.is_valid():
-            user = User.objects.all()[1]
             reply = ask_model(form.cleaned_data["query"])
             user.prompt_set.create(query=form.cleaned_data["query"], reply=reply)
             user.save()
     elif request.GET.get("load_id") != None:
         pass
     elif request.GET.get("del_id") != None:
-        pass
+        Prompt.objects.get(id=request.GET.get("del_id")).delete()
     # Load the prompts of the current user and add it to the response
-    user = User.objects.all()[1]
     data = {"prompts": user.prompt_set.all(), "prompt_form": PromptForm()}
     return render(request, "bulma-demo.html", data)
 
