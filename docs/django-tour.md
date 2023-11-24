@@ -13,6 +13,7 @@ Veuillez lire les instructions de configuration de chaque extension:
 
 ## Création et démarrage d'un projet
 
+- De préférence, créer un environnement virtuel: `python3 -m venv venv` ou `python -m venv venv`
 - Installer la dernière version de Django `pip install Django==[version]` ([cette page](https://www.djangoproject.com/download/) permet de trouver la dernière version)
 - Vérifier que l'installation a réussi: `python -m django --version`
 - Créer un **projet django**: `django-admin startproject [nom du projet]`
