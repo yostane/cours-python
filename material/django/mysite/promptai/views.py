@@ -6,6 +6,7 @@ from django.contrib.auth import login, authenticate, logout
 from django.contrib.auth.forms import AuthenticationForm, UserCreationForm
 from .forms import PromptForm
 from .models import Prompt
+from .helper import ask_model
 
 
 # Create your views here.
@@ -25,9 +26,8 @@ def show_chat_view(request: HttpRequest) -> HttpResponse:
         form = PromptForm(request.POST)
         if form.is_valid():
             user = User.objects.all()[1]
-            user.prompt_set.create(
-                query=form.cleaned_data["query"], reply="réponse à la main"
-            )
+            reply = ask_model(form.cleaned_data["query"])
+            user.prompt_set.create(query=form.cleaned_data["query"], reply=reply)
             user.save()
     # Load the prompts of the current user and add it to the response
     user = User.objects.all()[1]
@@ -56,9 +56,8 @@ def show_bulma_demo(request: HttpRequest) -> HttpResponse:
         form = PromptForm(request.POST)
         if form.is_valid():
             user = User.objects.all()[1]
-            user.prompt_set.create(
-                query=form.cleaned_data["query"], reply="réponse à la main"
-            )
+            reply = ask_model(form.cleaned_data["query"])
+            user.prompt_set.create(query=form.cleaned_data["query"], reply=reply)
             user.save()
     elif request.GET.get("load_id") != None:
         pass
