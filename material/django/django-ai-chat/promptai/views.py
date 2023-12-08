@@ -7,6 +7,7 @@ from django.contrib.auth.forms import AuthenticationForm, UserCreationForm
 from .forms import PromptForm
 from .models import Prompt
 from .helper import ask_model
+from django.contrib.auth.decorators import login_required
 
 
 # Create your views here.
@@ -16,10 +17,12 @@ def index(request):
     return HttpResponse(template.render(context, request))
 
 
+@login_required(login_url="login")
 def show_query_form(request):
     return render(request, "prompt-input.html")
 
 
+@login_required(login_url="login")
 def show_chat_view(request: HttpRequest) -> HttpResponse:
     # Process the form
     if request.method == "POST":
@@ -51,8 +54,9 @@ def show_material_demo(request: HttpRequest) -> HttpResponse:
     return render(request, "material-demo.html", data)
 
 
+@login_required(login_url="login")
 def show_bulma_demo(request: HttpRequest) -> HttpResponse:
-    user = User.objects.all()[1]
+    user = request.user
     if request.method == "POST":
         form = PromptForm(request.POST)
         if form.is_valid():
@@ -96,7 +100,11 @@ def login_request(request: HttpRequest) -> HttpResponse:
             user = authenticate(username=username, password=password)
             if user is not None:
                 login(request, user)
-                return redirect("bulma-demo")
+                return (
+                    redirect(request.GET.get("next"))
+                    if request.GET.get("next") != None
+                    else redirect("bulma-demo")
+                )
     form = AuthenticationForm()
     return render(
         request,
