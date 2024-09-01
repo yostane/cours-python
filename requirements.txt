@@ -1,4 +1,4 @@
 mdx-truly-sane-lists
 mkdocs-glightbox
-mkdocs-material==9.5.31
+mkdocs-material==9.5.34
 regex==2024.7.24
