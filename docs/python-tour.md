@@ -45,6 +45,12 @@ tour.py
     - `==` est parfois équivalent à `is`
 - Comme python est fortement type, convertir un valeur vers un autre type devra se faire explicitement `int()`, `float()`, `complex()`, `str()`, ...
 
+```py
+--8<--
+operators.py
+--8<--
+```
+
 ## Collections standards
 
 - Collection: type (ou structure) de données qui permet de gérer un ensemble de données
