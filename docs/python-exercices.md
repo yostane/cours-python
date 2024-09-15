@@ -1,3 +1,7 @@
+---
+title: Exercices
+---
+
 # Exercices
 
 !!! warning "Consignes"

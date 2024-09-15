@@ -1,9 +1,9 @@
 ---
 tags:
     - introduction
+title: Introduction
 ---
-
-# Bienvenue au cours "Développement en Python"
+# Bienvenue au cours de développement en Python
 
 <figure markdown>
   ![logo](img/logo.png)

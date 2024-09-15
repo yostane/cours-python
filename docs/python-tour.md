@@ -1,3 +1,7 @@
+---
+title: Tour du langage
+---
+
 # Tour du langage Python
 
 Nous allons faire un tour du langage Python sans forcément tout couvrir car il est très riche en fonctionnalités.
