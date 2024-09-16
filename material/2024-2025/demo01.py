@@ -20,3 +20,10 @@ if a > 10:
     print("a is stricly greater than 10")
 else:
     print("a is strictly less than 10")
+
+a1 = 10
+a2 = "10"
+# print(a1 + a2) # TypeError: unsupported operand type(s) for +: 'int' and 'str'
+a3 = int(a2)
+print(a3, a1 + a3)
+print(type(a1), type(a2), type(a3), type("Hello"), type(-1.4))
