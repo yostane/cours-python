@@ -33,8 +33,17 @@ print(
 print("Hello" + "world" + "2024")
 print("Hello" + " world " + "2024")
 
+text1 = "Hel'''''lo"
+text2 = 'Hello""""""'
+
 in1 = input("Please enter something and type 'Enter' when you finish: ")
 print(in1, type(in1))
 
 in2 = input("Please enter a number: ")
 print(in2, type(in2))
+print(int(in2) * 10)
+
+# Immediatly convert the input into an int
+in3 = int(input("Please enter a number: "))
+print(in3, type(in3))
+print(in3 * 10)
