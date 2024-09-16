@@ -32,3 +32,9 @@ print(
 )  # concatenation -> generate a string that starts with str(a1) and ends with a2
 print("Hello" + "world" + "2024")
 print("Hello" + " world " + "2024")
+
+in1 = input("Please enter something and type 'Enter' when you finish: ")
+print(in1, type(in1))
+
+in2 = input("Please enter a number: ")
+print(in2, type(in2))
