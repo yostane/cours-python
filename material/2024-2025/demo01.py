@@ -21,9 +21,14 @@ if a > 10:
 else:
     print("a is strictly less than 10")
 
-a1 = 10
-a2 = "10"
+a1 = 67
+a2 = "23"
 # print(a1 + a2) # TypeError: unsupported operand type(s) for +: 'int' and 'str'
 a3 = int(a2)
 print(a3, a1 + a3)
 print(type(a1), type(a2), type(a3), type("Hello"), type(-1.4))
+print(
+    str(a1) + a2
+)  # concatenation -> generate a string that starts with str(a1) and ends with a2
+print("Hello" + "world" + "2024")
+print("Hello" + " world " + "2024")
