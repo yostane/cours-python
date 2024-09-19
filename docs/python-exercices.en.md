@@ -13,8 +13,8 @@ title: Exercises
 1. Write a Python script that asks the user to enter an integer and displays whether the number is even or odd. 💡 Tip: use `n = int(input("Enter an integer: "))`
 1. Write a Python script that asks the user to enter an integer n and displays the sum of the first n integers (sum of integers from 0 to n inclusive).
 1. Write a Python script that asks the user to enter an integer and displays all the divisors of that number.
-1. Write a Python script that generates two random numbers x and y with 0 <= x < 10 and x <= y < 100. (tip: import `random` and call `x = random.randint(0, 10)`).
-1. Write a Python program that generates two random numbers x and y with 0 <= x < 10 and x <= y < 100. The program then displays the result of the integer division between y and x and the remainder of the division. (remember to handle the case where x = 0).
+1. Write a Python script that generates two random numbers x and y with 0 <= x <= 10 and x <= y <= 100. (tip: import `random` and call `x = random.randint(0, 10)`).
+1. Write a Python program that generates two random numbers x and y with 0 <= x <= 10 and x <= y <= 100. The program then displays the result of the integer division between y and x and the remainder of the division. (remember to handle the case where x = 0).
 1. Write a program that displays as many characters as possible from a string in a pyramid sequence. (tip: you can use a for loop on a string `for char in string`).
     - Example for the string "abcdefghijklmnopqrstuvwxyz" * 10
 
