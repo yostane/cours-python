@@ -44,7 +44,7 @@ title: Exercises
     ```
 
 1. Write a function `count_letters(text)` that takes a string argument `text` and returns a dictionary containing the frequency of all letters in the input string. For example: `count_letters("hello")` returns `{"h": 1, "e": 1, "l": 2, "o": 1}`.
-1. Given rectangles defined with dictionaries where the keys are `"x", "y", "width", "height"`:
+1. Given rectangles defined with dictionaries where the keys are `"x", "y", "width", "height"`, where `x` and `y` are the coordinates of the rectangle (we suppose that the origin (0, 0) is the top left corner of the screen) and `width` and `height` are its dimensions in pixel units
     - Write a function `is_intersecting(rectangle1, rectangle2)` that returns `True` if there is an intersection between the two rectangles.
     - Write a function `get_intersection(rectangle1, rectangle2)` that returns the intersecting rectangle if it exists, otherwise `None`.
 1. Write a function `fx_square(x)` that returns the result of `x * x`.
