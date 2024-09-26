@@ -29,6 +29,7 @@ nav:
   - python-func.md
   - python-func-exercices.md
   - django-tour.md
+  - django-tour.en.md
   - projects-type.md
 
 plugins:
