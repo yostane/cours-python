@@ -8,6 +8,8 @@ title: Tkinter
 
 ## Premiers pas
 
+Sur macOS, il faut probabelemnt installer la librairie `pip install tk`
+
 ```py title="Fenêtre basqiue"
 --8<--
 hello_tk_01.py

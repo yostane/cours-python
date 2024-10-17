@@ -26,9 +26,19 @@ title: Exercices de Tkinter
 1. Avec la librairie [playsound](https://pypi.org/project/playsound/), créer une fenêtre qui joue un son quand on clique sur un bouton.
     - Vous pouvez utiliser ce [tuto pour vous aider](https://stacklima.com/comment-jouer-des-sons-en-python-avec-tkinter/)
     - Vous pouvez utiliser ce [site pour trouver des sons](https://freesound.org/) ou télécharger [cet exemple](./assets/sample-3s.mp3)
+    - Si `pip install playsound` ne fonctionne pas, vous pouvez essayer `pip install playsound@git+https://github.com/taconi/playsound`
 1. Utiliser [tkvideoplayer](https://pypi.org/project/tkvideoplayer/) pour créer une fenêtre qui lit une vidéo.
 
 ### Astuces
+
+```py title="Générer un nombre aléatoire"
+import random
+nombre = random.randint(1, 100)
+```
+
+```py title="Fermer une fenêtre tk"
+window.destroy()
+```
 
 ```py title="message box"
 import tkinter.messagebox as mb
@@ -52,3 +62,19 @@ img = PhotoImage(file="image.png")
 label = Label(fenetre, image=img)
 label.pack()
 ```
+
+### Solutions
+
+??? "Random number button"
+    ```py
+    --8<--
+    tk_exercices/random_number_button.py
+    --8<--
+    ```
+
+??? "Play music"
+    ```py
+    --8<--
+    tk_exercices/playsound_demo.py
+    --8<--
+    ```

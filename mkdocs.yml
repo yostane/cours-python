@@ -100,6 +100,13 @@ markdown_extensions:
   - pymdownx.highlight:
       anchor_linenums: true
   - pymdownx.snippets:
-      base_path: ["includes", "material/tour", "material/poo", "material/demos"]
+      base_path:
+        [
+          "includes",
+          "material/tour",
+          "material/poo",
+          "material/demos",
+          "material",
+        ]
       auto_append:
         - "includes/abbreviations.md"
