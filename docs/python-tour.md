@@ -1,5 +1,5 @@
 ---
-title: Tour du langage
+title: 🐍 Tour du langage
 ---
 
 # Tour du langage Python

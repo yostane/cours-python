@@ -1,5 +1,5 @@
 ---
-title: Exercices
+title: 📚 Exercices
 ---
 
 # Exercices
