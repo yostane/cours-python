@@ -1,6 +1,6 @@
 import tkinter as tk
 
-# widget: tout composant de l'interface graphique: bouton, label, image, etc. (windows + gadget)
+# widget ou controle: tout composant de l'interface graphique: bouton, label, image, etc. (windows + gadget)
 
 window = tk.Tk()
 window.geometry("600x300")
@@ -20,6 +20,7 @@ def change_size():
 # command: on dit que c'est une callback
 button = tk.Button(window, text="Click Me", command=print_message)
 button2 = tk.Button(window, text="Click Me Here", command=change_size)
+# Lay or put the widgets into the window
 button.pack()
 label.pack()
 button2.pack()
