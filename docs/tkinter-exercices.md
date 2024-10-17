@@ -15,9 +15,14 @@ title: Exercices de Tkinter
 1. Créer une fenêtre qui affiche un bouton "Quitter" et un texte editable. Gérer le comportement suivant quand on clique sur le bouton "Quitter":
     - Si on n'a pas modifié le texte, la fenêtre se ferme,
     - Si on a modifié le texte, une boîte de dialogue demande si on veut vraiment quitter. Si on répond "Oui", la fenêtre se ferme, sinon elle reste ouverte (voir astuce plus bas).
-1. Créer une fenêtre qui affiche un texte editable et les boutons "sauvegarde" et "charger". Gérer le comportement suivant:
+1. Créer une fenêtre qui affiche un texte editable et les boutons "sauvegarder" et "charger". Gérer le comportement suivant:
     - Quand on clique sur "sauvegarde", le texte est sauvegardé dans un fichier texte,
     - Quand on clique sur "charger", le texte est chargé depuis le fichier texte et est affiché dans la zone éditable (voir astuce plus bas).
+1. Créer une fenêtre qui affiche deux textes editables et les boutons "sauvegarder" et "charger". Gérer le comportement suivant:
+    - Quand on clique sur "sauvegarde", le texte de la première zone éditable est sauvegardé dans un fichier texte. Le nom du fichier est déterminé par le texte de la deuxième zone éditable,
+    - Quand on clique sur "charger", le texte est chargé depuis le fichier texte et est affiché dans la zone éditable. Le nom du fichier est déterminé par le texte de la deuxième zone éditable.
+1. Créer une fenêtre qui affiche une image depuis un fichier.
+1. Créer une fenêtre qui affiche une zone de saisie de texte et un bouton. Quand l'utilisateur appuie sur le bouton, l'image dont le nom est définie par le zone de saisie est affichée en dessous.
 
 ### Astuces
 
@@ -34,4 +39,12 @@ def sauvegarder(texte):
 def charger():
     with open("fichier.txt", "r") as f:
         return f.read()
+```
+
+```py title="Afficher une image depuis un fichier avec tkinter"
+from tkinter import PhotoImage
+
+img = PhotoImage(file="image.png")
+label = Label(fenetre, image=img)
+label.pack()
 ```
