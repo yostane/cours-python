@@ -1,6 +1,10 @@
-# Exemples de projets à proposer
+---
+title: Projets types
+---
 
-Cette partie propose des exemples de mini-project ou projets qu'on peut proposer.
+# Projects types
+
+Cette partie propose des exemples de mini-project ou projets qu'on peut donner en TP.
 
 ## AI chat en Django
 

@@ -5,9 +5,12 @@ a = "hello"
 print(a)
 print("The value of a is", a)
 
+a = "22"
 b = 10
-c = a + b
-print("a + b", c)
+# erreur car python est fortement typé et n'autorise pas l'addition sur deux types différents
+# c = a + b
+# print("a + b", c)
+print(a + str(b), int(a) + b)
 
 if b == 10:
     print(b)
@@ -47,13 +50,16 @@ print("range loop")
 for item in r:
     print(item)
 
+
 for item in range(10):
     print(item)
 
 for i in range(10, 21, 3):
     print(i)
 
-
 message = "I ♥️ Python"
 for letter in message:
     print(letter)
+
+for i in range(len(message)):
+    print(i, message[i])

@@ -51,6 +51,14 @@ operators.py
 --8<--
 ```
 
+## Exceptions
+
+```py
+--8<--
+exception.py
+--8<--
+```
+
 ## Standard Collections
 
 - Collection: a type (or structure) of data that allows managing a set of data

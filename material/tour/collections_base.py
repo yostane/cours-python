@@ -7,17 +7,21 @@ print(numbers)
 print(numbers[0], numbers[-1], numbers[-2])
 
 print(numbers[0:3], numbers[:3], numbers[1:5])
-print(numbers[-3:-1])
+print(numbers[-3:-1], numbers[2:])
 
 for number in numbers:
     print(number)
 
+for i in range(len(numbers)):
+    print(i, numbers[i])
+
 # Dictionnaires: élements identidifiés par une clé (on parle aussi de couples clé/valeur)
-pokemon1 = {"name": "Pikachu", "hp": 10, "type": "Thunder"}
+pokemon1 = {"name": "Pikachu", "hp": 10, "type": "Thunder", 5: "une valeur"}
 print(
     pokemon1,
     pokemon1["name"],
     pokemon1["type"],
+    pokemon1[5],
     "name" in pokemon1,
     "surname" in pokemon1,
 )
@@ -40,3 +44,6 @@ print(n1, n1[2:])
 
 for item in n1:
     print(item)
+
+for i in range(len(n1)):
+    print(i, n1[i])

@@ -1,3 +1,7 @@
+---
+title: Exerices en prog. fonc.
+---
+
 # Exercices
 
 !!! warning "Consignes"

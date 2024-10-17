@@ -28,6 +28,8 @@ nav:
   - python-poo-exercices.md
   - python-func.md
   - python-func-exercices.md
+  - tkinter.md
+  - tkinter-exercices.md
   - django-tour.md
   - django-tour.en.md
   - projects-type.md
@@ -98,6 +100,6 @@ markdown_extensions:
   - pymdownx.highlight:
       anchor_linenums: true
   - pymdownx.snippets:
-      base_path: ["includes", "material/tour", "material/poo"]
+      base_path: ["includes", "material/tour", "material/poo", "material/demos"]
       auto_append:
         - "includes/abbreviations.md"
