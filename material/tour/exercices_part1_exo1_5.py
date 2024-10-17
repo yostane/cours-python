@@ -8,3 +8,7 @@ for i in range(n + 1):
     somme_n += i
 
 print("Somme des", n, "premiers entiers", somme_n)
+
+for i in range(1, n):
+    if n % i == 0:
+        print(i, "est un diviseur de", n)
