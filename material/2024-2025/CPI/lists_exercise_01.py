@@ -1,7 +1,13 @@
-"""Exercise 1:
-write a function that takes a list argument and prints the values of the first and last elemets
-call this function 2 times
-"""
+def print_first_and_last(items):
+    """Exercise 1:
+    write a function that takes a list argument and prints the values of the first and last elemets
+    call this function 2 times
+    """
+    print(items[0], items[-1])
+
+
+print_first_and_last([1, 2, 3])
+print_first_and_last("Hello")
 
 """Exercise 2:
 write a function that takes a string and an int argument. It prints:
