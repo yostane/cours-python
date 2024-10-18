@@ -80,10 +80,19 @@ print(
     get_even_odd2(87, "even", "odd"),
 )
 
-"""
-Ex5: Define a function that takes an int argument. Implement the function as follows.
-The function reads an interger from the keyboard (with input) and prints:
-- "You win" if the entered number is bigger than the argument
-- "You lose" otherwise
-Call this function 1 time.
-"""
+
+def guess_game(x):
+    """
+    Ex5: Define a function that takes an int argument. Implement the function as follows.
+    The function reads an interger from the keyboard (with input) and prints:
+    - "You win" if the entered number is bigger than the argument
+    - "You lose" otherwise
+    Call this function 1 time.
+    """
+    attempt = int(input("Welcome to the guess game 👋. Please enter a number: "))
+    result = "You win 👍" if attempt > x else "You lose ☠️"
+    print(result)
+
+
+guess_game(10)
+guess_game(7)
