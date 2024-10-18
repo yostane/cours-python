@@ -6,7 +6,7 @@ def multiply(x, y):
     return x * y
 
 
-print("Exercice 1")
+print("Exercise 1")
 a1 = multiply(2, 4)
 a2 = multiply(1, 0)
 a3 = multiply(1, -7)
@@ -29,7 +29,7 @@ def get_max2(x, y):
     return x if x >= y else y
 
 
-print("Exercice 2")
+print("Exercise 2")
 print(get_max(3, -8), get_max(0, 1), get_max2(1000, 100), get_max2(-7987, 333))
 
 
@@ -46,7 +46,7 @@ def get_min_three(a, b, c):
         return c
 
 
-print("Exercice 3")
+print("Exercise 3")
 print(
     get_min_three(0, 1, 2),
     get_min_three(10, -3, 99),
@@ -54,12 +54,31 @@ print(
     get_min_three(7, 11, -2),
 )
 
-"""
-Ex4: Define a function that takes three arguments: an int and two strings.
-if the first argument is even, the function returns the first string argument.
-Otherwise, it returns the second string argument.
-Call this function 4 times and print the results.
-"""
+
+def get_even_odd(n, even_string, odd_string):
+    """
+    Ex4: Define a function that takes three arguments: an int and two strings.
+    if the first argument is even, the function returns the first string argument.
+    Otherwise, it returns the second string argument.
+    Call this function 4 times and print the results.
+    """
+    return even_string if n % 2 == 0 else odd_string
+
+
+def get_even_odd2(n, even_string, odd_string):
+    if n % 2 == 0:
+        return even_string
+    else:
+        return odd_string
+
+
+print("Exercise 4:")
+print(
+    get_even_odd(2, "a", "b"),
+    get_even_odd(1, "A", "B"),
+    get_even_odd2(0, "🐍", "Python"),
+    get_even_odd2(87, "even", "odd"),
+)
 
 """
 Ex5: Define a function that takes an int argument. Implement the function as follows.
