@@ -1,4 +1,4 @@
-site_name: Cours de développement en Python
+site_name: Cours de Python
 site_url: https://yostane.github.io/cours-python/
 repo_url: https://github.com/yostane/cours-python
 repo_name: yostane/cours-python
@@ -9,16 +9,42 @@ extra:
     - icon: fontawesome/brands/github-alt
       link: https://github.com/yostane
   alternate:
-    - name: English
-      link: /en/ 
-      lang: en
     - name: Français
-      link: /fr/
+      link: ""
       lang: fr
+    - name: English
+      link: ""
+      lang: en
+
+nav:
+  - index.md
+  - index.en.md
+  - python-tour.md
+  - python-tour.en.md
+  - python-exercices.md
+  - python-exercices.en.md
+  - python-poo.md
+  - python-poo.en.md
+  - python-poo-exercices.md
+  - python-func.md
+  - python-func-exercices.md
+  - tkinter.md
+  - tkinter-exercices.md
+  - django-tour.md
+  - django-tour.en.md
+  - projects-type.md
 
 plugins:
   - search
   - glightbox
+  - i18n:
+      languages:
+        fr: "Français"
+        en: "English"
+      default_language: "fr"
+      no_translation:
+        fr: "Cette page n'est pas traduite en français."
+        en: "This page isn't translated to English."
 
 theme:
   language: fr
@@ -74,6 +100,13 @@ markdown_extensions:
   - pymdownx.highlight:
       anchor_linenums: true
   - pymdownx.snippets:
-      base_path: ["includes", "material/tour", "material/poo"]
+      base_path:
+        [
+          "includes",
+          "material/tour",
+          "material/poo",
+          "material/demos",
+          "material",
+        ]
       auto_append:
         - "includes/abbreviations.md"

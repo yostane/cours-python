@@ -21,7 +21,7 @@ print({f"{x}": "even" if x % 2 == 0 else "odd" for x in range(10)})
 
 # 4
 numbers = {f"{x}": "even" if x % 2 == 0 else "odd" for x in range(10)}
-print({key: value for key, value in numbers.items() if int(key) % 2 == 0})
+print({key: value for key, value in numbers.items() if int(key) % 2 != 0})
 
 # 5
 print((x for x in range(0, 40, 2)))

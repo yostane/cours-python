@@ -1,6 +1,10 @@
+---
+title: Programmation orientée objet
+---
+
 # Programmation orientée objet
 
-- Le paradigme OOP voit le programme comme un ensemble d'objets qui interagissent entre eux.
+Le paradigme OOP voit le programme comme un ensemble d'objets qui interagissent entre eux.
 
 ## Classes, objets et héritage
 

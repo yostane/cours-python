@@ -1,3 +1,7 @@
+---
+title: Programmation fonctionnelle
+---
+
 # Programmation fonctionnelle
 
 - Les fonctions sont des éléments de première classe : Les fonctions sont comme des variables

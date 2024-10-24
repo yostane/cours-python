@@ -1,3 +1,7 @@
+---
+title: 🐍 Tour du langage
+---
+
 # Tour du langage Python
 
 Nous allons faire un tour du langage Python sans forcément tout couvrir car il est très riche en fonctionnalités.
@@ -40,6 +44,20 @@ tour.py
     - `is` permet de tester l'identité entre deux objets. Son résultat peut être personnalisé.
     - `==` est parfois équivalent à `is`
 - Comme python est fortement type, convertir un valeur vers un autre type devra se faire explicitement `int()`, `float()`, `complex()`, `str()`, ...
+
+```py
+--8<--
+operators.py
+--8<--
+```
+
+## Exceptions
+
+```py
+--8<--
+exception.py
+--8<--
+```
 
 ## Collections standards
 
