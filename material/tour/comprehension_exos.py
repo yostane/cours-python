@@ -32,3 +32,12 @@ ranks = ["As", "Roi", "Reine", "Valet"] + [*range(2, 11)]
 
 cards = [(symbol, rank) for symbol in symbols for rank in ranks]
 print(cards)
+
+# 6
+students = [
+    {"name": "Olive", "birth_year": 2001},
+    {"name": "Tom", "birth_year": 1975},
+    {"name": "Alf", "birth_year": 1701},
+]
+print({x["name"] for x in students})
+print(tuple(x["birth_year"] for x in students))

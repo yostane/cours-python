@@ -110,10 +110,30 @@ Résoudre les exercices suivants avec les compréhensions.
 1. Créer un dictionnaire contentant 10 clé allant de 0 à 9 convertie en string. La valeur de chaque clé est une texte indiquant la parité du nombre. (exemple: {"0": "paire", "1": "impaire", etc.})
 1. Créer un dictionnaire qui filtre le dictionnaire précédent en ne gardant que les nombres impairs
 1. Créer un tuple qui contient les 20 premiers nombres pairs.
-1. Soit une liste d'étudiants ou chaque étudiannt est défini par un dictionnaire de ce type `etudiant = {"name": "sasha", "birth_year" = 2000}`.
+1. Soit une liste d'étudiants ou chaque étudiant est défini par un dictionnaire de noms et dates de naissance. Par exemple: 
+    ```py
+    students = [
+        {"name": "Olive", "birth_year": 2001},
+        {"name": "Tom", "birth_year": 1975},
+        {"name": "Alf", "birth_year": 1701},
+    ]
+    ```
     - Créer un ensemble des noms des étudiants.
     - Créer un tuple contenant les années de naissance de chaque étudiant.
+    - Afficher les noms des étudiants nés après 2000.
+    - On suppose que les étudiants nés avant 1980 ont comme souhait de métier est d'être lead dev tandis que les autres veulent être des développeurs. Générer une liste de dictionnaires des noms et son de métier à partir du dictionnaire d'origine.
+        - Exemple: `[{"name": "Olive", "job": "dev"}, {"name": "Tom", "job": "lead dev"}, {"name": "Alf", "job": "lead dev"}]`
 1. A partir d'un tuple de symboles `("♥️", "♠️", "♣️", "♦️")` et de la liste de rangs `["As", "Roi", "Reine", "Valet"] + [*range(2, 11)]`. Créer un jeu de cartes sous forme d'une liste de tuples qui est le produit cartésien entre les symboles et le rang.
+1. Créer une liste de tuples contenant les coordonnées des points (x, y) pour x allant de 0 à 10 et y allant de 0 à 10.
+    - Exemple: `[(0, 0), (0, 1), ..., (10, 10)]`
+1. Créer une liste de tuples contenant les coordonnées des points (x, y) pour x allant de 0 à 10 et y allant de 0 à 10. Filtrer les points pour ne garder que ceux dont la somme des coordonnées est paire.
+    - Exemple: `[(0, 0), (0, 2), (0, 4), ..., (10, 10)]`
+1. Créer une liste de tuples contenant les coordonnées des points (x, y) pour x allant de 0 à 10 et y allant de 0 à 10. Filtrer les points pour ne garder que ceux dont la somme des coordonnées est paire et x est supérieur à y.
+    - Exemple: `[(2, 0), (4, 0), (4, 2), ..., (10, 8)]`
+1. Générer une liste de 10 nombres aléatoires entre 0 et 100.
+1. Soit une liste de chaînes de caractères `["hello", "world", "python", "is", "cool"]`. Créer une liste de tuples contenant la chaîne de caractères et sa longueur.
+    - Exemple: `[("hello", 5), ("world", 5), ("python", 6), ("is", 2), ("cool", 4)]`
+
 
 ??? "Solutions"
 

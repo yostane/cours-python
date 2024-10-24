@@ -53,3 +53,6 @@ for i in row_count:
     for j in range(len(m[i])):
         result.append(f"m[{i}, {j}] => {m[i][j]}")
 print("Tranformation matrice vers liste avec for", result)
+
+# Pour faire une compréhension de tuple, il faut utiliser tuple()
+print(tuple(x + 6 for x in range(10)))
