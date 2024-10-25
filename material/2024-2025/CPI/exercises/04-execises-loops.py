@@ -103,6 +103,9 @@ ex7("Python", "Hello")
 animals = ["dog", "cat", "mouse"]
 for a in animals:
   print(a)
+
+"""Ex8-part2: Withtout running the program, tell exactly what it will print"""
+animals = ["dog", "cat", "mouse"]
 for a in [0, 1, 2]:
   print(a)
 for a in range(3):
