@@ -13,6 +13,9 @@ def questions(request):
   context = {"q": Question.objects.all() }
   return render(request, "questions.html", context)
 
+def create_question_form(request):
+  render(request, "create_question_form.html")
+
 def about(request):
   return render(request, "about.html")
 
