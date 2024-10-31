@@ -9,4 +9,6 @@ urlpatterns = [
     path("about", views.about, name="about"),
     path("dynamic", views.dynamic, name="dynamic"),
     path("questions", views.questions, name="questions"),
+    path("questions/createform", views.create_question_form, name="create_question_form"),
+    path("questions/submit_question", views.submit_question, name="submit_question"),
 ]

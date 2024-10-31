@@ -2,19 +2,26 @@ import datetime
 from django.shortcuts import render
 from django.http import HttpResponse
 import random
+from ynav.froms import QuestionForm
 from ynav.models import Question
 
 def questions(request):
-  q = Question(question_text="Do you love Django", pub_date=datetime.datetime.now())
-  q.save()
-  q.choice_set.create(choice_text="yes", votes=10)
-  q.choice_set.create(choice_text="no", votes=1)
-  q.save()
   context = {"q": Question.objects.all() }
   return render(request, "questions.html", context)
 
+def submit_question(request):
+  if request.method == "POST":
+    form = QuestionForm(request.POST)
+    if form.is_valid():
+      q = Question(question_text=form.cleaned_data["question"], pub_date=datetime.datetime.now())
+      q.save()
+      q.choice_set.create(choice_text=form.cleaned_data["choice1"], votes=form.cleaned_data["votes1"])
+      q.choice_set.create(choice_text=form.cleaned_data["choice2"], votes=form.cleaned_data["votes2"])
+      q.save()
+  return questions(request)
+
 def create_question_form(request):
-  render(request, "create_question_form.html")
+  return render(request, "create_question_form.html")
 
 def about(request):
   return render(request, "about.html")
