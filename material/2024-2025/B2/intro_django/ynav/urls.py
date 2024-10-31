@@ -8,4 +8,5 @@ urlpatterns = [
     path("user/profile", views.user_profile, name="user_profile"),
     path("about", views.about, name="about"),
     path("dynamic", views.dynamic, name="dynamic"),
+    path("questions", views.questions, name="questions"),
 ]

@@ -1,6 +1,17 @@
+import datetime 
 from django.shortcuts import render
 from django.http import HttpResponse
 import random
+from ynav.models import Question
+
+def questions(request):
+  q = Question(question_text="Do you love Django", pub_date=datetime.datetime.now())
+  q.save()
+  q.choice_set.create(choice_text="yes", votes=10)
+  q.choice_set.create(choice_text="no", votes=1)
+  q.save()
+  context = {"q": Question.objects.all() }
+  return render(request, "questions.html", context)
 
 def about(request):
   return render(request, "about.html")
