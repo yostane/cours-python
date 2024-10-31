@@ -14,7 +14,7 @@
   <ol>
     {% for question in q %}
     <li>
-      {{ question.question_text }}. Date: {{ question.pub_date }}. Choices: {{ question.choice_set() }}
+      {{ question.question_text }}. Date: {{ question.pub_date }}. Choices {{ question.choice_set }}
 
     </li>
     {% endfor %}
@@ -26,8 +26,8 @@
     <li>
       {{ question.question_text }}. Date: {{ question.pub_date }}
       <ul>
-        {% for choice in question.choice_set() %}
-        <li></li>
+        {% for choice in question.choice_set.all %}
+        <li>{{ choice.choice_text }} - {{ choice.votes }}</li>
         {% endfor %}
       </ul>
     </li>
