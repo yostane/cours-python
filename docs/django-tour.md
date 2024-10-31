@@ -11,7 +11,9 @@ Veuillez lire les instructions de configuration de chaque extension:
 - Formatteur et linteur de templates: [monosans.djlint](https://marketplace.visualstudio.com/items?itemName=monosans.djlint)
 - Coloration syntaxique des templates: [batisteo.vscode-django](https://marketplace.visualstudio.com/items?itemName=batisteo.vscode-django)
 
-## Création et démarrage d'un projet
+## Tutoriel couvrant les bases
+
+### Création et démarrage d'un projet
 
 - De préférence, créer un environnement virtuel: `python3 -m venv venv` ou `python -m venv venv`
 - Installer la dernière version de Django `pip install Django==[version]` ([cette page](https://www.djangoproject.com/download/) permet de trouver la dernière version)
@@ -31,7 +33,7 @@ mysite/
         wsgi.py # Point d'entée pour les serveurs de type WSGI
 ```
 
-## Ajout d'une application
+### Ajout d'une application
 
 - Un projet Django contient plusieurs **applications**
 - Pour Django, une **application** est un paquet Python qui proposer un ensemble de fonctionnalités (pages Web, Interface d'administration, API REST, Middlewares, etc.)
@@ -77,7 +79,7 @@ mysite/
 - Ouvrir la page que nous venons de créer en utilisant l'url: `[url du servur de dev]/[chemon de l'app]`. Pour notre cas, ce sera: `http://localhost:8000/polls/`
 - _Exercice_: ajouter une page `http://localhost:8000/polls/hello` qui affiche 'Hello World' dans une balise `h1`
 
-## Bases de données
+### Bases de données
 
 - Django utilise un mécanisme de **migrations** qui permet de suivre les évolutions de la structure la BDD dans le temps
     - Ce système est très pratique pour permettre des mises à niveau de la BDD de l'application de production sans avoir à appliquer à la main les changement faits durant le développement.
@@ -112,7 +114,7 @@ mysite/
         - Pour vérifier qui sera généré si on exécute cette migration par la suite: `python manage.py sqlmigrate polls 0001`
     1. Appliquer les migrations à la BDD: `python manage.py migrate`
 
-## Shell Django
+### Shell Django
 
 - Il est possible de tester les API de Django et agir sur notre projet depuis le terminal
 - Lancer la commande : `python manage.py shell` qui ouvre un invite interactif (affiche les résultat après chaque commande) Python lié à notre projet Django.
@@ -141,7 +143,7 @@ q.save()
 
 - Afin d'améliorer l'affichage des objets au sein de notre projet, définir la méthode `__str__(self):` dans chacune des classes modèles et réessayer d'appeler un `Question.objects.all()`.
 
-## Affichage des données dans des pages web
+### Affichage des données dans des pages web
 
 - Ce code permet d'afficher les questions et les choix sous forme de listes à puces.
 
@@ -170,7 +172,7 @@ def index(request):
     Par exemple `[x+1 for x in [1, 2, 3, 4]]` générera la liste `[1, 2, 3, 4, 5]`.
     Sur le même principe, `[f"<li>{c.choice_text} / {c.votes}</li>" for c in question.choice_set.all()]` gérera une liste de chaines de caractères.
 
-## Utilisation d'un template
+### Utilisation d'un template
 
 - Jusqu'à présent, le HTML des vues est codé _"en dur"_ dans le code
 - La technique recommandée est de faire les traitement dans le code et déléguer l'affichage à un fichier HTML particulier qu'on appelle **"template"**
