@@ -6,4 +6,6 @@ urlpatterns = [
     path("", views.index, name="index"),
     path("hello", views.hello, name="hello"),
     path("user/profile", views.user_profile, name="user_profile"),
+    path("about", views.about, name="about"),
+    path("dynamic", views.dynamic, name="dynamic"),
 ]

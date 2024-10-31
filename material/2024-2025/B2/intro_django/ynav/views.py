@@ -1,6 +1,13 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+import random
 
+def about(request):
+  return render(request, "about.html")
+
+def dynamic(request):
+  context = {"i" : random.randint(1, 10) , "t": "hello"}
+  return render(request, "dynamic.html", context)
 
 def index(request):
     return HttpResponse("Hello, world. You're at the polls index.")
@@ -20,3 +27,4 @@ def user_profile(request):
   </body>
   </html>
   """)
+

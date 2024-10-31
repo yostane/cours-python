@@ -34,3 +34,20 @@
             </body>
             </html>""")
         ```
+1. Créer une page qui affiche l'heure côté serveur. Exemple: `Il est 12:00`.
+    - Astuce: Utiliser la librairie `datetime` de Python.
+    - Exemple:
+    ```python
+    import datetime
+    t = f"Il est {datetime.now().strftime('%H:%M')}"
+    ```
+1. Créer une page qui utilise un template pour afficher la valeur du query param p. Exemple: `http://localhost:8000/ynav/query?p=hello` affiche `hello`.
+    - Astuce: Utiliser `request.GET.get('p')` pour récupérer la valeur du paramètre p.
+    - Exemple:
+    ```python
+    def query(request):
+        p = request.GET.get('p')
+        return render(request, 'query.html', {'p': p})
+    ```
+1. Créer une page qui utiliser un template pour afficher le profil de l'utilisateur avec les valeurs des query params `first_name` et `last_name`. Exemple: `http://localhost:8000/ynav/query/profile?first_name=John&last_name=Doe` affiche John Doe dans la page.
+1. Créer une page qui affiche tous entiers compris entre un mix et un max passés en query params. Exemple: `http://localhost:8000/ynav/query/range?min=1&max=5` affiche `1 2 3 4 5`.
