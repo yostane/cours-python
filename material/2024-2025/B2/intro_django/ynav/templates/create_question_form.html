@@ -9,6 +9,7 @@
 
 <body>
   <form action="submit_question" method="post">
+    {% csrf_token %}
     <div><label for="question">Question:</label>
       <input name="question" type="text" minlength="1" />
     </div>
