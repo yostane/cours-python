@@ -14,7 +14,7 @@ def user_profile(request):
       <title>Profile</title>
   </head>
   <body>
-      <h1>Profile</h1>
+      <h1 style="color:red">Profile</h1>
       <p>First Name: John</p>
       <p>Last Name: Doe</p>
   </body>

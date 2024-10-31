@@ -187,6 +187,8 @@ def showQuestionsWithTemplate(request):
 # ajouter path("questions", views.showQuestionsWithTemplate, name="questions"), dans urls.py
 ```
 
+```
+
 ```html "à mettre dans templates/questions.html"
 
 ```
