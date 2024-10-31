@@ -3,7 +3,7 @@
 ## Exercices
 
 1. Ajouter une page http://localhost:8000/ynav/hello qui affiche 'Hello World' dans une balise h1
-1. Ajouter une page http://localhost:8000/ynav/user/profile qui répond avec un html complet
+1. Ajouter une page http://localhost:8000/ynav/user/profile qui répond avec un html complet.
     - Exemple de contenu:
     ```html
     <html>
