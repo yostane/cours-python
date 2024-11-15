@@ -16,4 +16,5 @@ urlpatterns = [
     path("query", views.show_p_param, name="show_p_param"),
     path("time", views.show_time, name="show_time"),
     path("nameform", views.name_form, name="name_form"),
+    path("multiplication", views.multiplication, name="multiplication"),
 ]

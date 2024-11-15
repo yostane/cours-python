@@ -74,3 +74,6 @@ def name_form(request: HttpRequest) -> HttpResponse:
     if form.is_valid():
       return render(request, "nameformresult.html", {"name": form.cleaned_data["name"]})
   return render(request, "nameform.html")
+
+def multiplication(request: HttpRequest) -> HttpResponse:
+  return render(request, "multiplication.html", { "n": int(request.GET.get("n")), "r": range(10) })
