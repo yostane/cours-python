@@ -84,15 +84,68 @@ print(
 def guess_game(x):
     """
     Ex5: Define a function that takes an int argument. Implement the function as follows.
-    The function reads an interger from the keyboard (with input) and prints:
+    The function reads an integer from the keyboard (with input) and prints:
     - "You win" if the entered number is bigger than the argument
     - "You lose" otherwise
     Call this function 1 time.
     """
     attempt = int(input("Welcome to the guess game 👋. Please enter a number: "))
+    
+    # method 1
+    if attempt > x:
+        print("You win")
+    else:
+        print("You lose")
+
+    # Method 2
+    # operand2 if operand1 else operand3 is a ternary operator which returns:
+    # operand2 if operand1 is True otherwise it returns operand3
+    # For example: 1 if 5 == 8 else 99 => its result is 99 
     result = "You win 👍" if attempt > x else "You lose ☠️"
     print(result)
 
 
 guess_game(10)
-guess_game(7)
+
+
+def extra_exercise():
+    """Write a function that reads two integers from the keyboard (entered by the user)
+    The program prints which numbers is bigger.
+    Call this function twice
+    """
+    n1 = int(input("Enter the first number"))
+    n2 = int(input("Enter the second number"))
+    if n1 > n2:
+        print(n1, "is grater than", n2)
+    else:
+        print(n2, "is grater than", n1)
+
+# extra_exercise()
+# extra_exercise()
+
+def extra_exercise2(a, b, op):
+    """Write a function that can add, substract, divide or multiply.
+    The first two arguments are the operands.
+    The thid arguemnt is the operator passed as a string.
+    The function returns the result of the computation.
+    Call the function twice for each operation and print the result each time.
+    """
+    if op == "+":
+        return a + b
+    elif op == "-":
+        return a - b
+    elif op == "*":
+        return a * b
+    elif op == "/":
+        return a * b
+    else:
+        return 0
+
+# Calling the function twice for each operation
+print(extra_exercise2(1, 2, "+"), extra_exercise2(-5, 7, "+"))
+print(extra_exercise2(1, 2, "-"), extra_exercise2(-5, 7, "-"))
+print(extra_exercise2(2, 8, "*"), extra_exercise2(-1, 3, "*"))
+print(extra_exercise2(1, 2, "/"), extra_exercise2(-5, 7, "/"))
+
+operator = input("please enter: +, -, * or /: ")
+print(extra_exercise2(-5, 7, operator))
