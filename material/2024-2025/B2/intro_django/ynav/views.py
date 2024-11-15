@@ -2,7 +2,7 @@ import datetime
 from django.shortcuts import render
 from django.http import HttpResponse, HttpRequest
 import random
-from ynav.froms import QuestionForm
+from ynav.froms import QuestionForm, NameForm
 from ynav.models import Question
 
 def questions(request):
@@ -66,3 +66,11 @@ def show_range(request: HttpRequest) -> HttpResponse:
   end = int(request.GET.get("max"))
   context = { "r": range(start, end + 1) }
   return render(request, "range.html", context)
+
+
+def name_form(request: HttpRequest) -> HttpResponse:
+  if request.method == "POST":
+    form = NameForm(request.POST)
+    if form.is_valid():
+      return render(request, "nameformresult.html", {"name": form.cleaned_data["name"]})
+  return render(request, "nameform.html")

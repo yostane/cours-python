@@ -7,3 +7,6 @@ class QuestionForm(forms.Form):
     choice2 = forms.CharField(label="choice2", max_length=100)
     votes1 = forms.IntegerField(label="votes1")
     votes2 = forms.IntegerField(label="votes2")
+
+class NameForm(forms.Form):
+    name = forms.CharField(label="name", max_length=100, min_length=1)
