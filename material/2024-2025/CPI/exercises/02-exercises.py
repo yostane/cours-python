@@ -62,6 +62,11 @@ def get_even_odd(n, even_string, odd_string):
     Otherwise, it returns the second string argument.
     Call this function 4 times and print the results.
     """
+    # n is the first argument
+    # even_string is the second argument and also the first string argument
+    # odd_string is the third argument and also the second string argument
+    # if n is odd, we return the first string argument -> even_string
+    # otherwise, we return the second string argument -> odd_string
     return even_string if n % 2 == 0 else odd_string
 
 
