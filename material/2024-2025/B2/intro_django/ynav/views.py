@@ -1,6 +1,6 @@
 import datetime 
 from django.shortcuts import render
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpRequest
 import random
 from ynav.froms import QuestionForm
 from ynav.models import Question
@@ -38,6 +38,7 @@ def hello(request):
 
 def user_profile(request):
   return HttpResponse("""
+  <html>
   <head>
       <title>Profile</title>
   </head>
@@ -49,3 +50,9 @@ def user_profile(request):
   </html>
   """)
 
+def show_time(request: HttpRequest) -> HttpResponse:
+  return render(request, "time.html", {"time": datetime.datetime.now().strftime('%H:%M')})
+
+def show_p_param(request: HttpRequest) -> HttpResponse:
+  p_value = request.GET.get("p")
+  return render(request, "showp.html", {"p": p_value})

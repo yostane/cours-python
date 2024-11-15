@@ -11,4 +11,6 @@ urlpatterns = [
     path("questions", views.questions, name="questions"),
     path("questions/createform", views.create_question_form, name="create_question_form"),
     path("questions/submit_question", views.submit_question, name="submit_question"),
+    path("query", views.show_p_param, name="show_p_param"),
+    path("time", views.show_time, name="show_time"),
 ]

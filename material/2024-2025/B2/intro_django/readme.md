@@ -34,12 +34,12 @@
             </body>
             </html>""")
         ```
-1. Créer une page qui affiche l'heure côté serveur. Exemple: `Il est 12:00`.
+1. Créer une page `/ynav/time` qui affiche l'heure côté serveur. Exemple: `Il est 12:00`.
     - Astuce: Utiliser la librairie `datetime` de Python.
     - Exemple:
     ```python
     import datetime
-    t = f"Il est {datetime.now().strftime('%H:%M')}"
+    t = f"Il est {datetime.datetime.now().strftime('%H:%M')}"
     ```
 1. Créer une page qui utilise un template pour afficher la valeur du query param p. Exemple: `http://localhost:8000/ynav/query?p=hello` affiche `hello`.
     - Astuce: Utiliser `request.GET.get('p')` pour récupérer la valeur du paramètre p.
