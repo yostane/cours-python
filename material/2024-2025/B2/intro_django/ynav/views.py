@@ -56,3 +56,13 @@ def show_time(request: HttpRequest) -> HttpResponse:
 def show_p_param(request: HttpRequest) -> HttpResponse:
   p_value = request.GET.get("p")
   return render(request, "showp.html", {"p": p_value})
+
+def show_query_profile(request: HttpRequest) -> HttpResponse:
+  context = { "fn": request.GET.get("first_name"), "ln": request.GET.get("last_name") }
+  return render(request, "query_profile.html", context)
+
+def show_range(request: HttpRequest) -> HttpResponse:
+  start = int(request.GET.get("min"))
+  end = int(request.GET.get("max"))
+  context = { "r": range(start, end + 1) }
+  return render(request, "range.html", context)
