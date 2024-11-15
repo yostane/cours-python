@@ -10,3 +10,7 @@ class QuestionForm(forms.Form):
 
 class NameForm(forms.Form):
     name = forms.CharField(label="name", max_length=100, min_length=1)
+
+class PakimanForm(forms.Form):
+    name = forms.CharField(label="name", max_length=100, min_length=1)
+    type = forms.CharField(label="type", max_length=100, min_length=1)

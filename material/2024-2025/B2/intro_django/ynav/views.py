@@ -2,8 +2,8 @@ import datetime
 from django.shortcuts import render
 from django.http import HttpResponse, HttpRequest
 import random
-from ynav.froms import QuestionForm, NameForm
-from ynav.models import Question
+from ynav.froms import PakimanForm, QuestionForm, NameForm
+from ynav.models import Pakiman, Question
 
 def questions(request):
   context = {"q": Question.objects.all() }
@@ -77,3 +77,16 @@ def name_form(request: HttpRequest) -> HttpResponse:
 
 def multiplication(request: HttpRequest) -> HttpResponse:
   return render(request, "multiplication.html", { "n": int(request.GET.get("n")), "r": range(10) })
+
+def pakiman(request: HttpRequest) -> HttpResponse:
+  if request.method == "POST":
+    form = PakimanForm(request.POST)
+    if form.is_valid():
+      q = Pakiman(name=form.cleaned_data["name"], 
+                  type=form.cleaned_data["type"],
+                  attack=random.randint(5, 15))
+      q.save()
+
+  
+  context = { "pakimans" : pakimans}
+  return render(request, "nameform.html")
