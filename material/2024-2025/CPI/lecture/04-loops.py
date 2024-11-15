@@ -1,6 +1,7 @@
 items = [1, 2, 3, 4, 5]
 
 # print if every item is even or odd
+# This is not a good solution because we need to add or remove prints if the length of the list changes
 print(items[0] % 2 == 0)
 print(items[1] % 2 == 0)
 print(items[2] % 2 == 0)
