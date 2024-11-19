@@ -46,3 +46,30 @@ for n in numbers:
 
 f.writelines(numbers_as_strings3)
 f.close()
+
+# With string concatenation: "hel" + "lo" -> "hello"
+f = open("numbers4.txt", "w")
+# "1" + "\n" -> "1\n" 
+numbers_as_strings4 = [ str(numbers[0]) + "\n", str(numbers[1]) + "\n", str(numbers[2])]
+# numbers_as_strings4 will contain ["1\n", "2\n", "3"]
+f.writelines(numbers_as_strings4)
+f.close()
+
+# With a for loop (the file will have 4 lines here)
+f = open("numbers5.txt", "w")
+numbers_as_strings5 = []
+for n in numbers:
+    numbers_as_strings5.append(str(n) + "\n")
+f.writelines(numbers_as_strings5)
+f.close()
+
+
+# (not required for now) do not add an extra empty line
+f = open("numbers-extra.txt", "w")
+numbers_as_strings_extra = []
+for n in numbers[:-1]:
+    numbers_as_strings_extra.append(str(n))
+    numbers_as_strings_extra.append("\n")
+numbers_as_strings_extra.append(str(numbers[-1]))
+f.writelines(numbers_as_strings_extra)
+f.close()
