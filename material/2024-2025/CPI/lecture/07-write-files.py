@@ -22,10 +22,27 @@ numbers_as_strings = [str(numbers[0]), str(numbers[1]), str(numbers[2])]
 f.writelines(numbers_as_strings)
 f.close()
 
+
 f = open("numbers2.txt", "w")
+# Add a new line after each number except for the last one
 numbers_as_strings2 = [
     str(numbers[0]),
+    "\n",
     str(numbers[1]),
+    "\n",
     str(numbers[2])
     ]
+f.writelines(numbers_as_strings2)
+f.close()
+
+# With a for loop so that it works with any list size
+numbers = [1, 2, 3]
+f = open("numbers3.txt", "w")
+numbers_as_strings3 = []
+for n in numbers:
+    # "append" adds an element to the end of the list
+    numbers_as_strings3.append(str(n))
+    numbers_as_strings3.append("\n")
+
+f.writelines(numbers_as_strings3)
 f.close()
