@@ -67,9 +67,11 @@ f.close()
 # (not required for now) do not add an extra empty line
 f = open("numbers-extra.txt", "w")
 numbers_as_strings_extra = []
+# numbers[:-1] -> :-1 means that we take all the items except the last one
 for n in numbers[:-1]:
     numbers_as_strings_extra.append(str(n))
     numbers_as_strings_extra.append("\n")
+# After the for loop, we add the last line withtout a line break
 numbers_as_strings_extra.append(str(numbers[-1]))
 f.writelines(numbers_as_strings_extra)
 f.close()
