@@ -15,8 +15,8 @@ def print_message():
 button = ttk.Button(window, text="Click Me", command=print_message)
 
 # Change the order of pack and see what happens
-label2.grid(row=0, column=0)
-label.grid(row=0, column=1)
-button.grid(row=1, column=0)
+label2.grid(row=0, column=0, padx=5, pady=5)
+label.grid(row=0, column=1, padx=5, pady=5)
+button.grid(row=1, column=0, padx=5, pady=5)
 
 window.mainloop()
