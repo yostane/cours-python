@@ -1,3 +1,4 @@
+from typing import NamedTuple, TypedDict
 from transformers import pipeline
 
 context = """Vous êtes un assistant IA utile et qui connait tout ce qu'il faut savoir sur une école qui s'appelle ynov
@@ -57,10 +58,15 @@ des entreprises recommandent YNOV comme organisme de formation*
 des entreprises trouvent que le contenu de la formation proposé par Ynov est pertinent au regard des compétences à développer par les apprenants dans le cadre de leur activité professionnelle*
 
 *Enquête réalisée en Juin 2022 auprès de 3356 entreprises, sur la base de 389 entreprises ayant répondu
-     """
+"""
+
 qa_model = pipeline("question-answering", "timpal0l/mdeberta-v3-base-squad2")
-question = "C'est quoi les ydays ?"
-reply = qa_model(question = question, context = context)
 
+class Reply(TypedDict):
+    answer: str
+    score: int
+    start: int
+    end: int
 
-print("score:", reply["score"], "anwser:", reply["answer"])
+def anwser(question: str) -> Reply:
+    return qa_model(question = question, context = context)
