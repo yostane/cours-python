@@ -1,7 +1,7 @@
 import tkinter as tk
 from tkinter import ttk
 from datetime import datetime
-from mdeberta_utils import anwser, context
+from mdeberta_utils import anwser, ynov_context
 
 
 prompts = []

@@ -1,7 +1,7 @@
 from typing import NamedTuple, TypedDict
 from transformers import pipeline
 
-context = """Vous êtes un assistant IA utile et qui connait tout ce qu'il faut savoir sur une école qui s'appelle ynov
+ynov_context = """Vous êtes un assistant IA utile et qui connait tout ce qu'il faut savoir sur une école qui s'appelle ynov
      basées sur ces informations:
      - Les Ydays , pépinières de projets
 L'objectif des Ydays est de permettre aux étudiants de mettre en pratique leurs compétences et leurs connaissances dans un environnement collaboratif et stimulant, tout en développant leur créativité et en renforçant leur expérience professionnelle. 
@@ -69,4 +69,4 @@ class Reply(TypedDict):
     end: int
 
 def anwser(question: str) -> Reply:
-    return qa_model(question = question, context = context)
+    return qa_model(question = question, context = ynov_context)
