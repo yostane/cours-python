@@ -12,7 +12,7 @@ frame = VerticalScrolledFrame(window)
 
 frame.pack(expand = True, fill = tk.BOTH)
 
-for i in range(10):
+for i in range(20):
     ttk.Button(frame.interior, text=f"Button {i}").pack(padx=10, pady=5)
 
 window.mainloop()
